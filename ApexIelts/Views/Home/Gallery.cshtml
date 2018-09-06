@@ -1,0 +1,310 @@
+﻿@using AdminPaneNew.Areas.OfficialAdmin.Models
+@{
+    ViewBag.Title = "Gallery";
+    Layout = "~/Views/Shared/Layout.cshtml";
+    dbcontext db = new dbcontext();
+    var pagdata = db.Pages.Where(x => x.Pagesid == 7).FirstOrDefault();
+}
+
+
+@section Keyword {
+    <meta name="description" content="Template built for Business & Financial, Consulting, Accounting, Broker">
+    <meta name="keywords" content="advisor, analytical, audit, broker, brokerage, business, company, Consultech, consulting, consulting psd, finance, financial, insurance, trader, trading">
+}
+
+@*BreadCrumb*@
+
+<div id="featured-title" class="clearfix featured-title-left">
+    <div id="featured-title-inner" class="container clearfix">
+        <div class="featured-title-inner-wrap">
+            <div id="breadcrumbs">
+                <div class="breadcrumbs-inner">
+                    <div class="breadcrumb-trail">
+                        <a href="@Url.Action("Home")" title="Apex Ielts" rel="home" class="trail-begin">Home</a>
+                        <span class="sep"><span class="fa fa-angle-right" aria-hidden="true"></span></span>
+                        <span class="trail-end">Founder Message</span>
+                    </div>
+                </div>
+            </div>
+            <div class="featured-title-heading-wrap">
+                <h1 class="featured-title-heading">Founder Message</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*End BreadCrumb*@
+<div class="container" style="padding:40px 0px">
+    <div class="col-md-9">
+        <div class="wprt-portfolio-grid" data-column="4" data-column2="3" data-column3="2" data-column4="1" data-gaph="30" data-gapv="30">
+           
+            <div id="projects" class="cbp">
+                <div class="cbp-item equity finance">
+                    <div class="project-item style-2">
+                        <div class="inner">
+                            <div class="project-image">
+                                <img src="~/assets/img/projects/grid-2/project-1.jpg" alt="image">
+                            </div>
+                            <div class="text">
+                                <div>
+                                    <h2><a href="page-project-detail.html" title="">Airlines & Transportation</a></h2>
+                                    <a href="#" title="">Strategy Marketing</a>
+                                </div>
+                            </div>
+
+                            <a class="zoom-popup cbp-lightbox" href="~/assets/img/projects/grid-2/project-1.jpg" data-title="Airlines & Transportation">
+                                <i class="fa fa-arrows"></i>
+                            </a>
+                        </div>
+                    </div><!-- /.project-item -->
+                </div><!-- /.cbp-item -->
+                <div class="cbp-item analytics strategy">
+                    <div class="project-item style-2">
+                        <div class="inner">
+                            <div class="project-image">
+                                <img src="~/assets/img/projects/grid-2/project-2.jpg" alt="image">
+                            </div>
+                            <div class="text">
+                                <div>
+                                    <h2><a href="page-project-detail.html" title="">Consumer Products</a></h2>
+                                    <a href="#" title="">Corporate Finance</a>
+                                </div>
+                            </div>
+
+                            <a class="zoom-popup cbp-lightbox" href="~/assets/img/projects/grid-2/project-2.jpg" data-title="Consumer Products">
+                                <i class="fa fa-arrows"></i>
+                            </a>
+                        </div>
+                    </div><!-- /.project-item -->
+                </div><!-- /.cbp-item -->
+                <div class="cbp-item equity finance">
+                    <div class="project-item style-2">
+                        <div class="inner">
+                            <div class="project-image">
+                                <img src="~/assets/img/projects/grid-2/project-3.jpg" alt="image">
+                            </div>
+                            <div class="text">
+                                <div>
+                                    <h2><a href="page-project-detail.html" title="">Financial Services</a></h2>
+                                    <a href="#" title="">Resources planning</a>
+                                </div>
+                            </div>
+
+                            <a class="zoom-popup cbp-lightbox" href="~/assets/img/projects/grid-2/project-3.jpg" data-title="Financial Services">
+                                <i class="fa fa-arrows"></i>
+                            </a>
+                        </div>
+                    </div><!-- /.project-item -->
+                </div><!-- /.cbp-item -->
+                <div class="cbp-item analytics strategy resources">
+                    <div class="project-item style-2">
+                        <div class="inner">
+                            <div class="project-image">
+                                <img src="~/assets/img/projects/grid-2/project-4.jpg" alt="image">
+                            </div>
+                            <div class="text">
+                                <div>
+                                    <h2><a href="page-project-detail.html" title="">Healthcare</a></h2>
+                                    <a href="#" title="">Private Equity</a>
+                                </div>
+                            </div>
+
+                            <a class="zoom-popup cbp-lightbox" href="~/assets/img/projects/grid-2/project-4.jpg" data-title="Healthcare">
+                                <i class="fa fa-arrows"></i>
+                            </a>
+                        </div>
+                    </div><!-- /.project-item -->
+                </div><!-- /.cbp-item -->
+                <div class="cbp-item finance">
+                    <div class="project-item style-2">
+                        <div class="inner">
+                            <div class="project-image">
+                                <img src="~/assets/img/projects/grid-2/project-5.jpg" alt="image">
+                            </div>
+                            <div class="text">
+                                <div>
+                                    <h2><a href="page-project-detail.html" title="">Industrial Goods & Services</a></h2>
+                                    <a href="#" title="">Corporate Finance</a>
+                                </div>
+                            </div>
+
+                            <a class="zoom-popup cbp-lightbox" href="~/assets/img/projects/grid-2/project-5.jpg" data-title="Industrial Goods & Services">
+                                <i class="fa fa-arrows"></i>
+                            </a>
+                        </div>
+                    </div><!-- /.project-item -->
+                </div><!-- /.cbp-item -->
+                <div class="cbp-item resources strategy">
+                    <div class="project-item style-2">
+                        <div class="inner">
+                            <div class="project-image">
+                                <img src="~/assets/img/projects/grid-2/project-6.jpg" alt="image">
+                            </div>
+                            <div class="text">
+                                <div>
+                                    <h2><a href="page-project-detail.html" title="">Media</a></h2>
+                                    <a href="#" title="">Private Equity</a>
+                                </div>
+                            </div>
+
+                            <a class="zoom-popup cbp-lightbox" href="~/assets/img/projects/grid-2/project-6.jpg" data-title="Media">
+                                <i class="fa fa-arrows"></i>
+                            </a>
+                        </div>
+                    </div><!-- /.project-item -->
+                </div><!-- /.cbp-item -->
+                <div class="cbp-item equity finance">
+                    <div class="project-item style-2">
+                        <div class="inner">
+                            <div class="project-image">
+                                <img src="~/assets/img/projects/grid-2/project-7.jpg" alt="image">
+                            </div>
+                            <div class="text">
+                                <div>
+                                    <h2><a href="page-project-detail.html" title="">Metals & Mining</a></h2>
+                                    <a href="#" title="">Strategy Marketing</a>
+                                </div>
+                            </div>
+
+                            <a class="zoom-popup cbp-lightbox" href="~/assets/img/projects/grid-2/project-7.jpg" data-title="Metals & Mining">
+                                <i class="fa fa-arrows"></i>
+                            </a>
+                        </div>
+                    </div><!-- /.project-item -->
+                </div><!-- /.cbp-item -->
+                <div class="cbp-item finance">
+                    <div class="project-item style-2">
+                        <div class="inner">
+                            <div class="project-image">
+                                <img src="~/assets/img/projects/grid-2/project-8.jpg" alt="image">
+                            </div>
+                            <div class="text">
+                                <div>
+                                    <h2><a href="page-project-detail.html" title="">Utilities & Alternative Energy</a></h2>
+                                    <a href="#" title="">Resources planning</a>
+                                </div>
+                            </div>
+
+                            <a class="zoom-popup cbp-lightbox" href="~/assets/img/projects/grid-2/project-8.jpg" data-title="Utilities & Alternative Energy">
+                                <i class="fa fa-arrows"></i>
+                            </a>
+                        </div>
+                    </div><!-- /.project-item -->
+                </div><!-- /.cbp-item -->
+                <div class="cbp-item strategy equity resources">
+                    <div class="project-item style-2">
+                        <div class="inner">
+                            <div class="project-image">
+                                <img src="~/assets/img/projects/grid-2/project-9.jpg" alt="image">
+                            </div>
+                            <div class="text">
+                                <div>
+                                    <h2><a href="page-project-detail.html" title="">Telecommunications</a></h2>
+                                    <a href="#" title="">Strategy Marketing</a>
+                                </div>
+                            </div>
+
+                            <a class="zoom-popup cbp-lightbox" href="~/assets/img/projects/grid-2/project-9.jpg" data-title="Telecommunications">
+                                <i class="fa fa-arrows"></i>
+                            </a>
+                        </div>
+                    </div><!-- /.project-item -->
+                </div><!-- /.cbp-item -->
+                <div class="cbp-item analytics finance">
+                    <div class="project-item style-2">
+                        <div class="inner">
+                            <div class="project-image">
+                                <img src="~/assets/img/projects/grid-2/project-10.jpg" alt="image">
+                            </div>
+                            <div class="text">
+                                <div>
+                                    <h2><a href="page-project-detail.html" title="">Technology</a></h2>
+                                    <a href="#" title="">Resources planning</a>
+                                </div>
+                            </div>
+
+                            <a class="zoom-popup cbp-lightbox" href="~/assets/img/projects/grid-2/project-10.jpg" data-title="Technology">
+                                <i class="fa fa-arrows"></i>
+                            </a>
+                        </div>
+                    </div><!-- /.project-item -->
+                </div><!-- /.cbp-item -->
+                <div class="cbp-item equity">
+                    <div class="project-item style-2">
+                        <div class="inner">
+                            <div class="project-image">
+                                <img src="~/assets/img/projects/grid-2/project-11.jpg" alt="image">
+                            </div>
+                            <div class="text">
+                                <div>
+                                    <h2><a href="page-project-detail.html" title="">Social & Public Sector</a></h2>
+                                    <a href="#" title="">Private Equity</a>
+                                </div>
+                            </div>
+
+                            <a class="zoom-popup cbp-lightbox" href="~/assets/img/projects/grid-2/project-11.jpg" data-title="Social & Public Sector">
+                                <i class="fa fa-arrows"></i>
+                            </a>
+                        </div>
+                    </div><!-- /.project-item -->
+                </div><!-- /.cbp-item -->
+                <div class="cbp-item resources analytics">
+                    <div class="project-item style-2">
+                        <div class="inner">
+                            <div class="project-image">
+                                <img src="~/assets/img/projects/grid-2/project-12.jpg" alt="image">
+                            </div>
+                            <div class="text">
+                                <div>
+                                    <h2><a href="page-project-detail.html" title="">Retail</a></h2>
+                                    <a href="#" title="">Corporate Finance</a>
+                                </div>
+                            </div>
+
+                            <a class="zoom-popup cbp-lightbox" href="~/assets/img/projects/grid-2/project-12.jpg" data-title="Retail">
+                                <i class="fa fa-arrows"></i>
+                            </a>
+                        </div>
+                    </div><!-- /.project-item -->
+                </div><!-- /.cbp-item -->
+            </div><!-- /#projects -->
+        </div>
+    </div>
+    <div class="col-md-3">
+        <nav class="wprt-navbar style-1">
+            <ul class="menu">
+                <li class="nav-item">
+                    <a href="@Url.Action("CompanyOverview")">Company OverView</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("FounderMessage")">Founder Message</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("WhyChooseUs")">Why Choose Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("OurMission")">Our Mission</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("OurVision")">Our Vision</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="wprt-spacer clearfix" data-desktop="35" data-mobi="20" data-smobi="20"></div>
+        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fapexieltscentrezira%2F&tabs&width=250&height=180&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=755281824540788" width="250" height="180" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe><!-- /.wprt-carousel-box -->
+        <div class="wprt-spacer clearfix" data-desktop="47" data-mobi="30" data-smobi="20"></div>
+        <div class="wrap quick">
+            <div class="wprt-headings clearfix">
+                <h2 class="heading font-size-24 margin-bottom-5">@pagdata.Name</h2>
+                <div class="sub-heading font-size-14">@Html.Raw(pagdata.Description)</div>
+            </div>
+            <div class="wprt-spacer clearfix" data-desktop="20" data-mobi="10" data-smobi="10"></div>
+            <div class="wrap-button">
+                <a class="wprt-button btn-small" href="@Url.Action("ContactUs")">Contact Us</a>
+            </div>
+        </div>
+        <div class="wprt-spacer clearfix" data-desktop="0" data-mobi="40" data-smobi="30"></div>
+    </div>
+</div>
+
+

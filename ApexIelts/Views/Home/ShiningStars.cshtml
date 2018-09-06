@@ -1,0 +1,76 @@
+﻿@using AdminPaneNew.Areas.OfficialAdmin.Models
+@{
+    ViewBag.Title = "ShiningStars";
+    Layout = "~/Views/Shared/Layout.cshtml";
+    dbcontext db = new dbcontext();
+    var mm = db.Achievers.ToList();
+}
+
+@section Keyword {
+    <meta name="description" content="Template built for Business & Financial, Consulting, Accounting, Broker">
+    <meta name="keywords" content="advisor, analytical, audit, broker, brokerage, business, company, Consultech, consulting, consulting psd, finance, financial, insurance, trader, trading">
+}
+
+@*BreadCrumb*@
+
+<div id="featured-title" class="clearfix featured-title-left">
+    <div id="featured-title-inner" class="container clearfix">
+        <div class="featured-title-inner-wrap">
+            <div id="breadcrumbs">
+                <div class="breadcrumbs-inner">
+                    <div class="breadcrumb-trail">
+                        <a href="@Url.Action("Home")" title="Apex Ielts" rel="home" class="trail-begin">Home</a>
+                        <span class="sep"><span class="fa fa-angle-right" aria-hidden="true"></span></span>
+                        <span class="trail-end">Shining Stars</span>
+                    </div>
+                </div>
+            </div>
+            <div class="featured-title-heading-wrap">
+                <h1 class="featured-title-heading">Shining Stars</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*End BreadCrumb*@
+<div class="container" style="padding:40px 0px">
+    <div class="col-md-12">
+        <div class="row">
+            @foreach(var aa in mm)
+            {
+
+         
+            <div class="col-md-3 col-sm-6">
+                <div class="wprt-team style-3">
+                    <div class="team-item clearfix">
+                        <div class="thumb">
+                            <img class="attachment-full size-full wp-post-image" src="~/UploadedFiles/@aa.Image" alt="Image">
+
+                            
+                        </div><!-- /.thumb -->
+                        <div class="text-wrap">
+                            <h4 class="name"><a href="page-team-single.html">@aa.Name</a></h4>
+                            <div class="position">@aa.Course</div>
+                            <div class="desc">
+                            
+                                <span><i class="fa fa-headphones" aria-hidden="true"></i>@aa.Listening</span>
+                                <span><i class="fa fa-book" aria-hidden="true"></i> @aa.Reading</span>
+                                <span><i class="fa fa-microphone" aria-hidden="true"></i> @aa.Speaking</span>
+                                <span><i class="fa fa-pencil" aria-hidden="true"></i> @aa.Writing</span>
+                            
+                            </div>
+                            <div class="wprt-link">
+                                Overall @aa.Overall
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wprt-spacer clearfix" data-desktop="30" data-mobi="30" data-smobi="30"></div>
+            </div>
+            }
+          
+        </div>
+    </div>
+    
+</div>
+

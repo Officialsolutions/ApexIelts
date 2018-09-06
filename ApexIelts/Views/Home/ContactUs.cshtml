@@ -1,0 +1,125 @@
+﻿@model AdminPaneNew.Areas.OfficialAdmin.Models.Contact
+    @{ 
+    ViewBag.Title = "ContactUs";
+    Layout = "~/Views/Shared/Layout.cshtml";
+    @*dbcontext db = new dbcontext();
+    Contact cont = new Contact();
+    List<contact> list = db.Contacts.ToList().FirstOrDefault();*@
+}
+
+@section Keyword {
+    <meta name="description" content="Template built for Business & Financial, Consulting, Accounting, Broker">
+    <meta name="keywords" content="advisor, analytical, audit, broker, brokerage, business, company, Consultech, consulting, consulting psd, finance, financial, insurance, trader, trading">
+}
+
+@*BreadCrumb*@
+
+<div id="featured-title" class="clearfix featured-title-left">
+    <div id="featured-title-inner" class="container clearfix">
+        <div class="featured-title-inner-wrap">
+            <div id="breadcrumbs">
+                <div class="breadcrumbs-inner">
+                    <div class="breadcrumb-trail">
+                        <a href="@Url.Action("Home")" title="Apex Ielts" rel="home" class="trail-begin">Home</a>
+                        <span class="sep"><span class="fa fa-angle-right" aria-hidden="true"></span></span>
+                        <span class="trail-end">Contact Us</span>
+                    </div>
+                </div>
+            </div>
+            <div class="featured-title-heading-wrap">
+                <h1 class="featured-title-heading">Contact Us</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*End BreadCrumb*@
+<div class="row-contact-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+             
+                <div class="wprt-spacer clearfix" data-desktop="54" data-mobi="30" data-smobi="30"></div>
+                <div class="wprt-gmap-1 map-2 clearfix">
+
+
+
+                    <div class="gmap" data-lat="40.6616346" data-lng="-73.6894069" data-zoom="14" data-scrollwheel="false" data-icon="../../../maps.google.com/mapfiles/marker_green.png">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13683.85063885948!2d74.9847473!3d30.9715242!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe844d5a352f94ec6!2sApex+Ielts+Centre!5e0!3m2!1sen!2sin!4v1535536430140" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+
+
+                </div><!-- /.wprt-gmap-1 -->
+
+                <div class="wprt-spacer clearfix" data-desktop="40" data-mobi="30" data-smobi="30"></div>
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="wprt-content-box style-2">
+                            <h4>Address</h4>
+                            <div class="wrap-text">
+                                <p>@Model.Address</p>
+                                @*<p>Email: @Model.Email<a href="#"></a></p>
+                                <p>Phone:@Model.Phone </p>*@
+                            </div>
+                        </div>
+                        <div class="wprt-spacer clearfix" data-desktop="0" data-mobi="40" data-smobi="30"></div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="wprt-content-box style-2">
+                            <h4>Email</h4>
+                            <div class="wrap-text">
+                                <p>@Model.Email</p>
+                                @*<p>Email: <a href="#">info.contact@gmail.com</a></p>
+                                <p>Phone: 123-456-7890</p>*@
+                            </div>
+                        </div>
+                        <div class="wprt-spacer clearfix" data-desktop="0" data-mobi="40" data-smobi="30"></div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="wprt-content-box style-2">
+                            <h4>Phone </h4>
+                            <div class="wrap-text">
+                                @*<p>40 Baria Sreet 133/2 NewYork City, US</p>
+                                <p>Email: <a href="#">info.contact@gmail.com</a></p>*@
+                                <p>Phone: @Model.Phone </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wprt-spacer clearfix" data-desktop="45" data-mobi="40" data-smobi="30"></div>
+                <div class="wprt-line"></div>
+                <div class="wprt-spacer clearfix" data-desktop="45" data-mobi="40" data-smobi="30"></div>
+                <div class="wprt-headings text-center clearfix">
+                    <h2 class="heading font-size-30">Contact Us By Email!</h2>
+                    @*<div class="sub-heading">Fill out the form below to recieve a free and confidential intial consultation.</div>*@
+                </div><!-- /.wprt-headings -->
+                <div class="wprt-spacer clearfix" data-desktop="35" data-mobi="30" data-smobi="20"></div>
+              @using (Html.BeginForm("Email", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                @*<form action="#" method="post" class="contact-form wpcf7-form">*@
+                    <div class="wprt-contact-form-5">
+                        <span class="wpcf7-form-control-wrap name">
+                            <input type="text" tabindex="2" id="name" name="name" value="" class="wpcf7-form-control" placeholder="Name *" required>
+                        </span>
+                        <span class="wpcf7-form-control-wrap email">
+                            <input type="email" tabindex="3" id="email" name="email" value="" class="wpcf7-form-control" placeholder="E-mail *" required>
+                        </span>
+                        <span class="wpcf7-form-control-wrap website">
+                            <input type="text" tabindex="3" id="subject" name="subject" value="" class="wpcf7-form-control" placeholder="Subject">
+                        </span>
+                        <span class="wpcf7-form-control-wrap message">
+                            <textarea name="message" tabindex="1" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" placeholder="Message *" required></textarea>
+                        </span>
+                        <div class="wrap-submit text-center">
+                            <input type="submit" value="Send Message" class="submit wpcf7-form-control wpcf7-submit" id="submit" name="submit">
+                        </div>
+                    </div>
+                @*</form>*@
+                }
+                <div class="wprt-spacer clearfix" data-desktop="80" data-mobi="60" data-smobi="40"></div>
+            </div>
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</div>

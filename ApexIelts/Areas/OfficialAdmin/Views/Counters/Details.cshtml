@@ -1,0 +1,54 @@
+﻿@model AdminPaneNew.Areas.OfficialAdmin.Models.Counter
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/OfficialAdmin/Views/Shared/Layout.cshtml";
+}
+@section Pagename {
+
+    Counters
+
+}
+
+<div>
+    <h3>Details</h3>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Experience)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Experience)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customers)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customers)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Award)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Award)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Satisfied)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Satisfied)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Counterid }) |
+     @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-danger" })
+</p>

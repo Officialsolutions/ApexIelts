@@ -1,0 +1,100 @@
+﻿@model AdminPaneNew.Areas.OfficialAdmin.Models.SingleService
+@{
+    ViewBag.Title = "ServiceDetails";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@section Keyword {
+    <meta name="description" content="Template built for Business & Financial, Consulting, Accounting, Broker">
+    <meta name="keywords" content="advisor, analytical, audit, broker, brokerage, business, company, Consultech, consulting, consulting psd, finance, financial, insurance, trader, trading">
+}
+
+@*BreadCrumb*@
+
+<div id="featured-title" class="clearfix featured-title-left">
+    <div id="featured-title-inner" class="container clearfix">
+        <div class="featured-title-inner-wrap">
+            <div id="breadcrumbs">
+                <div class="breadcrumbs-inner">
+                    <div class="breadcrumb-trail">
+                        <a href="@Url.Action("Home")" title="Apex Ielts" rel="home" class="trail-begin">Home</a>
+                        <span class="sep"><span class="fa fa-angle-right" aria-hidden="true"></span></span>
+                        <span class="trail-end">Service Details</span>
+                    </div>
+                </div>
+            </div>
+            <div class="featured-title-heading-wrap">
+                <h1 class="featured-title-heading">@Model.Name</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*End BreadCrumb*@
+<div class="container" style="padding:40px 0px">
+    <div class="col-md-9">
+        <div class="image-wrap">
+            <img src="~/UploadedFiles/@Model.Image" alt="Image">
+        </div>
+        <div class="wprt-spacer clearfix" data-desktop="23" data-mobi="20" data-smobi="20"></div>
+
+        <div class="desc">
+            <p class="margin-bottom-13">@Html.Raw(Model.Description)</p>
+           
+        </div>
+        <div class="wprt-spacer clearfix" data-desktop="56" data-mobi="30" data-smobi="20"></div>
+
+    </div>
+    <div class="col-md-3">
+        <nav class="wprt-navbar style-1">
+            <ul class="menu">
+                <li class="nav-item">
+                    <a href="@Url.Action("CompanyOverview")">Company OverView</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("FounderMessage")">Founder Message</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("WhyChooseUs")">Why Choose Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("OurMission")">Our Mission</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("OurVision")">Our Vision</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="wprt-spacer clearfix" data-desktop="35" data-mobi="20" data-smobi="20"></div>
+@using (Html.BeginForm("DetailEmail", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+        <div class="wprt-contact-form-5 change">
+            <h3>We Are Help You</h3>
+            <span class="wpcf7-form-control-wrap message">
+                <input type="text" tabindex="2" id="name" name="name" value="" class="wpcf7-form-control" placeholder="Name *" required="">
+            </span>
+
+            <span class="wpcf7-form-control-wrap message">
+                <input type="email" tabindex="3" id="email" name="email" value="" class="wpcf7-form-control" placeholder="E-mail *" required="">
+            </span>
+
+            <span class="wpcf7-form-control-wrap message">
+                <input type="text" tabindex="3" id="subject" name="subject" value="" class="wpcf7-form-control" placeholder="Subject">
+            </span>
+
+            <span class="wpcf7-form-control-wrap message">
+                <textarea name="message" tabindex="1" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" placeholder="Message *" required=""></textarea>
+            </span>
+
+            <div class="wrap-submit text-center">
+                <input type="submit" value="Send Message" class="submit wpcf7-form-control wpcf7-submit" id="submit" name="submit">
+            </div>
+        </div>
+}
+        <div class="wprt-spacer clearfix" data-desktop="47" data-mobi="30" data-smobi="20"></div>
+
+        <div class="wprt-spacer clearfix" data-desktop="0" data-mobi="40" data-smobi="30"></div>
+    </div>
+</div>
+
+

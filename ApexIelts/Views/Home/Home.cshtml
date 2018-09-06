@@ -1,0 +1,320 @@
+﻿
+@using AdminPaneNew.Areas.OfficialAdmin.Models
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/Layout.cshtml";
+    dbcontext db = new dbcontext();
+    List<slider> ss = db.sliders.ToList();
+    List<Service> service = db.Services.ToList();
+    var tie = db.Clientlogoes.ToList();
+    var test = db.Testimonials.ToList();
+    var servoffer = db.Pages.Where(x => x.Pagesid == 8).FirstOrDefault();
+    var achieve = db.Achievers.ToList().Take(4);
+    var welcom = db.Pages.Where(x => x.Pagesid == 1).FirstOrDefault();
+    List<Counter> counter = db.Counters.ToList();
+}
+
+<div class="rev_slider_wrapper fullwidthbanner-container">
+    <div id="rev-slider-1" class="rev_slider fullwidthabanner">
+        <ul>
+@if (ss != null)
+{
+    foreach (var s in ss)
+    {
+            <!-- Slide -->
+            <li data-transition="random">
+                <!-- Main Image -->
+                <img src="~/UploadedFiles/@s.Image" alt="" data-bgposition="center center" data-no-retina>
+                <!-- Layers -->
+                <div class="tp-caption tp-resizeme title-slide"
+                     data-x="['left','left','left','left']" data-hoffset="['0','30','30','30']"
+                     data-y="['middle','middle','middle','middle']" data-voffset="['-123','-123','-123','-123']"
+                     data-fontsize="['60','60','40',30]"
+                     data-lineheight="['60','60','40','30']"
+                     data-width="full"
+                     data-height="none"
+                     data-whitespace="normal"
+                     data-transform_idle="o:1;"
+                     data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                     data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                     data-mask_in="x:0px;y:[100%];"
+                     data-mask_out="x:inherit;y:inherit;"
+                     data-start="700"
+                     data-splitin="none"
+                     data-splitout="none"
+                     data-responsive_offset="on">
+                    @s.Name<br>
+                  
+                </div>
+                <div class="tp-caption tp-resizeme desc-slide"
+                     data-x="['left','left','left','left']" data-hoffset="['0','30','30','30']"
+                     data-y="['middle','middle','middle','middle']" data-voffset="['-22','-22','-22','-22']"
+                     data-fontsize="['18','18','18',18]"
+                     data-lineheight="['25','25','25','25']"
+                     data-width="['1170','991','550','420']"
+                     data-height="none"
+                     data-whitespace="normal"
+                     data-transform_idle="o:1;"
+                     data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                     data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                     data-mask_in="x:0px;y:[100%];"
+                     data-mask_out="x:inherit;y:inherit;"
+                     data-start="700"
+                     data-splitin="none"
+                     data-splitout="none"
+                     data-responsive_offset="on">
+                    <div style="width:50%;">
+                        @Html.Raw(s.Description)
+                    </div>
+                   
+                </div>
+            </li>
+    }
+} 
+            <!--/Slide -->
+        </ul>
+        <div class="tp-bannertimer tp-bottom"></div>
+    </div>
+</div>
+
+@*What We Are*@
+
+<div class="row-service-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="wprt-spacer clearfix" data-desktop="80" data-mobi="60" data-smobi="40"></div>
+                <div class="wprt-headings text-center clearfix">
+            
+                    <h2 class="heading">@servoffer.Name</h2>
+                    <div class="sub-heading">@Html.Raw(servoffer.Description)</div>
+             
+                </div>
+                <div class="wprt-spacer clearfix" data-desktop="42" data-mobi="30" data-smobi="20"></div>
+                <div class="wprt-carousel-box arrow-style-1 arrow-square arrow-center offsetcenter offset-v-80 has-arrows" data-auto="false" data-loop="false" data-gap="30" data-column="4" data-column2="2" data-column3="1">
+                    <div class="owl-carousel owl-theme owl-loaded owl-drag">
+                 
+                         @foreach (var ser in service)
+                         {
+                                <div class="wprt-image-box style-1 clearfix ">
+                                 <div class="item">
+                                  <div class="thumb">
+                                    <img src="~/UploadedFiles/@ser.Image" alt="Image">
+                                  </div>
+
+                                 <div class="text-wrap">
+                                    <h3 class="title">
+                                        <a target="_blank" href="#">@ser.Name</a>
+                                    </h3>
+                                    <div class="desc">@Html.Raw(ser.ShortDescription)</div>
+                                    <div class="wprt-link">
+                                        @Html.ActionLink("READ MORE", "ServiceDetails", new { id = ser.Serviceid }, new { @class = "small wprt-button outline ol-accent" })
+                                    </div>
+                                </div>
+                                </div>
+                                </div><!-- /.wprt-image-box style-1 -->
+                         }
+                   
+                    </div>
+                </div><!-- /wprt-carousel-box -->
+
+                <div class="wprt-spacer clearfix" data-desktop="76" data-mobi="60" data-smobi="40"></div>
+            </div>
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</div>
+
+@*Welcome Content*@
+
+<div class="row-about-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="wprt-spacer clearfix" data-desktop="80" data-mobi="60" data-smobi="60" style="height:80px"></div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="wprt-image-video w60">
+                    <img alt="image" src="~/UploadedFiles/@welcom.Image">
+                    @*<a class="icon-wrap popup-video" href="https://www.youtube.com/watch?v=HQzR7iiO5H4"></a>*@
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="wprt-spacer clearfix" data-desktop="0" data-mobi="30" data-smobi="30" style="height:0px"></div>
+
+                <div class="padding-left-30">
+                    <div class="wprt-headings clearfix">
+                        <h2 class="heading">@welcom.Name</h2>
+                    </div>
+
+                    <div class="wprt-spacer clearfix" data-desktop="41" data-mobi="30" data-smobi="10" style="height:41px"></div>
+
+                    <div class="wprt-toggles style-1 no-icon" style="max-height:100px;">
+                        @Html.Raw(welcom.Description)
+                    </div>
+                </div>
+            </div><!-- /.col-md-6 -->
+
+            
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</div>
+
+<div class="row-about-1" style="background: #5c70fc;">
+    <div class="container">
+        <div class="col-md-12">
+
+            <div class="wd-770">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="wprt-counter">
+                            <span class="number" data-speed="2000" data-to="@counter[0].Experience" data-inviewport="yes">@counter[0].Experience</span>
+                            <div class="heading">Years of Experience</div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="wprt-counter">
+                            <span class="number" data-speed="2000" data-to="@counter[0].Customers" data-inviewport="yes">@counter[0].Customers</span>
+                            <span class="suffix">k</span>
+                            <div class="heading">Happy Customers</div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="wprt-counter">
+                            <span class="number" data-speed="2000" data-to="@counter[0].Award" data-inviewport="yes">@counter[0].Award</span>
+                            <div class="heading">Awards Won</div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="wprt-counter">
+                            <span class="number" data-speed="2000" data-to="@counter[0].Satisfied" data-inviewport="yes">@counter[0].Satisfied</span>
+                            <span class="suffix">%</span>
+                            <div class="heading">Satisfied Customers</div>
+                        </div>
+                    </div>
+                </div><!-- /.row -->
+            </div>
+
+            @*<div class="wprt-spacer clearfix" data-desktop="71" data-mobi="51" data-smobi="31" style="height:71px"></div>*@
+        </div>
+    </div>
+</div>
+
+<div class="row-about-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="wprt-headings clearfix text-center" style="padding: 20px 0px;">
+                    <h2 class="heading">Recent Achiever</h2>
+                    @*<div class="sub-heading">We are here to Acelerate your business and help you find the way.</div>*@
+                </div>
+                <div class="wprt-portfolio-grid" data-column="4" data-column2="3" data-column3="2" data-column4="1" data-gaph="30" data-gapv="30">
+                    <div id="project-filter" class="filter-dark" style="display:none">
+                        <div class="inner">
+                            <div data-filter="*" class="cbp-filter-item"><span>All Projects</span></div>
+                            <div data-filter=".strategy" class="cbp-filter-item"><span>Strategy Marketing</span></div>
+                            <div data-filter=".finance" class="cbp-filter-item"><span>Corporate Finance</span></div>
+                            <div data-filter=".resources" class="cbp-filter-item"><span>Resources planning</span></div>
+                            <div data-filter=".equity" class="cbp-filter-item"><span>Private Equity</span></div>
+                            <div data-filter=".analytics" class="cbp-filter-item"><span>Advanced Analytics</span></div>
+                        </div>
+                    </div><!-- /.project-filter -->
+                    <div id="projects" class="cbp">
+                    @if(achieve!=null)
+                    {
+                    foreach (var ach in achieve)
+                    {
+                        <div class="cbp-item equity finance">
+                            <div class="project-item style-2">
+                                <div class="inner">
+                                    <div class="project-image">
+                                        <img src="~/UploadedFiles/@ach.Image" alt="image">
+                                    </div>
+                                   
+
+                                    <a class="zoom-popup cbp-lightbox" href="~/UploadedFiles/@ach.Image" data-title="Airlines & Transportation">
+                                        <i class="fa fa-arrows"></i>
+                                    </a>
+                                </div>
+                            </div><!-- /.project-item -->
+
+                        </div><!-- /.cbp-item -->
+                    }
+                    }
+                      
+                    </div><!-- /#projects -->
+                </div><!-- /.wprt-portfolio-grid -->
+                <div class="wprt-spacer clearfix" data-desktop="80" data-mobi="60" data-smobi="40"></div>
+            </div><!-- /.cold-md-12 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</div>
+
+<div class="row-contact-2">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="wd-570">
+                    <div class="wprt-spacer clearfix" data-desktop="79" data-mobi="60" data-smobi="40" style="height:79px"></div>
+
+                    <div class="wprt-carousel-box bullet0 bullet-style-2 bullet-circle has-bullets" data-auto="true" data-loop="true" data-gap="10" data-column="1" data-column2="1" data-column3="1">
+                        <div class="owl-carousel owl-theme">
+                            @if(test!=null)
+                            {
+                            foreach (var tt in test)
+                            {
+                            <div class="wprt-testimonials text-center clearfix ">
+                                <span class="arrow-3">“</span>
+                                <blockquote class="text">
+                                   @Html.Raw(tt.Description)
+                                </blockquote>
+                                <div class="info">
+                                    <h6 class="name">@tt.Name</h6>
+                                    @*<span class="sep">|</span>
+                                    <span class="position">CEO CVTSoft</span>*@
+                                </div>
+                            </div><!-- /.wprt-testimonials -->
+                            }
+                            }
+                        </div>
+                    </div>
+
+                    <div class="wprt-spacer clearfix" data-desktop="50" data-mobi="10" data-smobi="10" style="height:50px"></div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="wprt-gmap-1 map-2 clearfix">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13683.85063885948!2d74.9847473!3d30.9715242!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe844d5a352f94ec6!2sApex+Ielts+Centre!5e0!3m2!1sen!2sin!4v1535536430140" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div><!-- /.wprt-gmap-1 -->
+            </div>
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<div class="row-partner-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="wprt-line"></div>
+                <div class="wprt-partner-slider" data-auto="true" data-column="6" data-column2="4" data-column3="2" data-gap="30">
+                    <div class="owl-carousel owl-theme owl-loaded owl-drag">
+                        @if(tie!=null)
+                        {
+                        foreach (var tieup in tie)
+                        {
+                        <div class="partner-item clearfix">
+                            <img src="~/UploadedFiles/@tieup.Image" alt="Image" class="img-responsive">
+                        </div>
+                        }
+                        }
+
+                    </div>
+                </div>
+            </div><!-- /.col-md-12 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</div>

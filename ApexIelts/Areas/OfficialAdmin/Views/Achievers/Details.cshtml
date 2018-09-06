@@ -1,0 +1,94 @@
+﻿@model AdminPaneNew.Areas.OfficialAdmin.Models.Achievers
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/OfficialAdmin/Views/Shared/Layout.cshtml";
+}
+@section Pagename {
+
+    Achievers
+
+}
+
+<div>
+    <h3>Details</h3>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShortDescription)
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.ShortDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+
+        <dd>
+            <img src="~/UploadedFiles/@Model.Image" style="width:100px;" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Course)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Course)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Reading)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reading)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Writing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Writing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Listening)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Listening)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Speaking)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Speaking)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Overall)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Overall)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Achieverid }) |
+     @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-danger" })
+</p>

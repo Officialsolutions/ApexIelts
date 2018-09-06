@@ -1,0 +1,778 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ED2E6C91-FFC5-40E3-99BB-9586F53BA700}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ApexIelts</RootNamespace>
+    <AssemblyName>ApexIelts</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.1.2.3\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.1.2.3\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.1.2.3\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.1.2.3\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.1.2.3\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=1.2.3.490, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.1.2.3\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\assets\css\bootstrap.css" />
+    <Content Include="Areas\assets\css\checkbox3.min.css" />
+    <Content Include="Areas\assets\css\custom-styles.css" />
+    <Content Include="Areas\assets\css\font-awesome.css" />
+    <Content Include="Areas\assets\css\preview.css" />
+    <Content Include="Areas\assets\css\select2.min.css" />
+    <Content Include="Areas\assets\css\sidebar.css" />
+    <Content Include="Areas\assets\font-awesome\fonts\fontawesome-webfontba72ba72.svg" />
+    <Content Include="Areas\assets\fonts\glyphicons-halflings-regular.html" />
+    <Content Include="Areas\assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Areas\assets\js\bootstrap.min.js" />
+    <Content Include="Areas\assets\js\chart.min.js" />
+    <Content Include="Areas\assets\js\chartjs.js" />
+    <Content Include="Areas\assets\js\custom-scripts.js" />
+    <Content Include="Areas\assets\js\dataTables\dataTables.bootstrap.css" />
+    <Content Include="Areas\assets\js\dataTables\dataTables.bootstrap.js" />
+    <Content Include="Areas\assets\js\dataTables\jquery.dataTables.js" />
+    <Content Include="Areas\assets\js\easypiechart-data.js" />
+    <Content Include="Areas\assets\js\easypiechart.js" />
+    <Content Include="Areas\assets\js\images\sort_asc.html" />
+    <Content Include="Areas\assets\js\images\sort_asc_disabled.html" />
+    <Content Include="Areas\assets\js\images\sort_both.html" />
+    <Content Include="Areas\assets\js\images\sort_desc.html" />
+    <Content Include="Areas\assets\js\images\sort_desc_disabled.html" />
+    <Content Include="Areas\assets\js\jquery-1.10.2.js" />
+    <Content Include="Areas\assets\js\jquery.metisMenu.js" />
+    <Content Include="Areas\assets\js\Lightweight-Chart\cssCharts.css" />
+    <Content Include="Areas\assets\js\Lightweight-Chart\jquery.chart.js" />
+    <Content Include="Areas\assets\js\morris\morris-0.4.3.min.css" />
+    <Content Include="Areas\assets\js\morris\morris.js" />
+    <Content Include="Areas\assets\js\morris\raphael-2.1.0.min.js" />
+    <Content Include="Areas\assets\js\preview\jquery-1.10.2.js" />
+    <Content Include="Areas\assets\js\select2.full.min.js" />
+    <Content Include="Areas\assets\js\tinymce.min.js" />
+    <Content Include="Areas\assets\login\css\main.css" />
+    <Content Include="Areas\assets\login\css\util.css" />
+    <Content Include="Areas\assets\login\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Areas\assets\login\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Areas\assets\login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Areas\assets\login\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Areas\assets\login\fonts\Linearicons-Free-v1.0.0\icon-font.min.css" />
+    <Content Include="Areas\assets\login\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.svg" />
+    <Content Include="Areas\assets\login\fonts\montserrat\OFL.txt" />
+    <Content Include="Areas\assets\login\fonts\raleway\OFL.txt" />
+    <Content Include="Areas\assets\login\fonts\ubuntu\UFL.txt" />
+    <Content Include="Areas\assets\login\images\admin.png" />
+    <Content Include="Areas\assets\login\images\Consulting_Icon.png" />
+    <Content Include="Areas\assets\login\images\contact.png" />
+    <Content Include="Areas\assets\login\images\download.jpg" />
+    <Content Include="Areas\assets\login\images\favicon.ico" />
+    <Content Include="Areas\assets\login\images\featurs.png" />
+    <Content Include="Areas\assets\login\images\home-512.png" />
+    <Content Include="Areas\assets\login\images\icons\favicon.ico" />
+    <Content Include="Areas\assets\login\images\icons\icon-google.png" />
+    <Content Include="Areas\assets\login\images\icons\map-marker.png" />
+    <Content Include="Areas\assets\login\images\icons\symbol-01.png" />
+    <Content Include="Areas\assets\login\images\if_testimonial_56297.png" />
+    <Content Include="Areas\assets\login\images\Logo_blog.png" />
+    <Content Include="Areas\assets\login\images\news-icon-12.png" />
+    <Content Include="Areas\assets\login\images\photogallery.png" />
+    <Content Include="Areas\assets\login\images\services.png" />
+    <Content Include="Areas\assets\login\images\slider.png" />
+    <Content Include="Areas\assets\login\images\video-icon.png" />
+    <Content Include="Areas\assets\login\js\main.js" />
+    <Content Include="Areas\assets\login\vendor\animate\animate.css" />
+    <Content Include="Areas\assets\login\vendor\animsition\css\animsition.css" />
+    <Content Include="Areas\assets\login\vendor\animsition\css\animsition.min.css" />
+    <Content Include="Areas\assets\login\vendor\animsition\js\animsition.js" />
+    <Content Include="Areas\assets\login\vendor\animsition\js\animsition.min.js" />
+    <Content Include="Areas\assets\login\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Areas\assets\login\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Areas\assets\login\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Areas\assets\login\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Areas\assets\login\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Areas\assets\login\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Areas\assets\login\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Areas\assets\login\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Areas\assets\login\vendor\bootstrap\js\popper.js" />
+    <Content Include="Areas\assets\login\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="Areas\assets\login\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="Areas\assets\login\vendor\countdowntime\countdowntime.js" />
+    <Content Include="Areas\assets\login\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="Areas\assets\login\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="Areas\assets\login\vendor\daterangepicker\daterangepicker.css" />
+    <Content Include="Areas\assets\login\vendor\daterangepicker\daterangepicker.js" />
+    <Content Include="Areas\assets\login\vendor\daterangepicker\moment.js" />
+    <Content Include="Areas\assets\login\vendor\daterangepicker\moment.min.js" />
+    <Content Include="Areas\assets\login\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="Areas\assets\login\vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="Areas\assets\login\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="Areas\assets\login\vendor\select2\select2.css" />
+    <Content Include="Areas\assets\login\vendor\select2\select2.js" />
+    <Content Include="Areas\assets\login\vendor\select2\select2.min.css" />
+    <Content Include="Areas\assets\login\vendor\select2\select2.min.js" />
+    <Content Include="Areas\assets\tinymce\jquery.tinymce.min.js" />
+    <Content Include="Areas\assets\tinymce\license.txt" />
+    <Content Include="Areas\assets\tinymce\plugins\advlist\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\anchor\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\autolink\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\autoresize\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\autosave\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\bbcode\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\charmap\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\codesample\css\prism.css" />
+    <Content Include="Areas\assets\tinymce\plugins\codesample\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\code\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\colorpicker\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\contextmenu\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\directionality\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\emoticons\img\smiley-cool.gif" />
+    <Content Include="Areas\assets\tinymce\plugins\emoticons\img\smiley-cry.gif" />
+    <Content Include="Areas\assets\tinymce\plugins\emoticons\img\smiley-embarassed.gif" />
+    <Content Include="Areas\assets\tinymce\plugins\emoticons\img\smiley-foot-in-mouth.gif" />
+    <Content Include="Areas\assets\tinymce\plugins\emoticons\img\smiley-frown.gif" />
+    <Content Include="Areas\assets\tinymce\plugins\emoticons\img\smiley-innocent.gif" />
+    <Content Include="Areas\assets\tinymce\plugins\emoticons\img\smiley-kiss.gif" />
+    <Content Include="Areas\assets\tinymce\plugins\emoticons\img\smiley-laughing.gif" />
+    <Content Include="Areas\assets\tinymce\plugins\emoticons\img\smiley-money-mouth.gif" />
+    <Content Include="Areas\assets\tinymce\plugins\emoticons\img\smiley-sealed.gif" />
+    <Content Include="Areas\assets\tinymce\plugins\emoticons\img\smiley-smile.gif" />
+    <Content Include="Areas\assets\tinymce\plugins\emoticons\img\smiley-surprised.gif" />
+    <Content Include="Areas\assets\tinymce\plugins\emoticons\img\smiley-tongue-out.gif" />
+    <Content Include="Areas\assets\tinymce\plugins\emoticons\img\smiley-undecided.gif" />
+    <Content Include="Areas\assets\tinymce\plugins\emoticons\img\smiley-wink.gif" />
+    <Content Include="Areas\assets\tinymce\plugins\emoticons\img\smiley-yell.gif" />
+    <Content Include="Areas\assets\tinymce\plugins\emoticons\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\example\dialog.html" />
+    <Content Include="Areas\assets\tinymce\plugins\example\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\example_dependency\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\fullpage\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\fullscreen\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\hr\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\imagetools\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\image\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\importcss\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\insertdatetime\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\layer\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\legacyoutput\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\link\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\lists\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\media\moxieplayer.swf" />
+    <Content Include="Areas\assets\tinymce\plugins\media\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\nonbreaking\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\noneditable\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\pagebreak\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\paste\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\preview\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\print\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\save\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\searchreplace\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\spellchecker\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\tabfocus\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\table\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\template\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\textcolor\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\textpattern\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\visualblocks\css\visualblocks.css" />
+    <Content Include="Areas\assets\tinymce\plugins\visualblocks\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\visualchars\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\plugins\wordcount\plugin.min.js" />
+    <Content Include="Areas\assets\tinymce\skins\lightgray\content.inline.min.css" />
+    <Content Include="Areas\assets\tinymce\skins\lightgray\content.min.css" />
+    <Content Include="Areas\assets\tinymce\skins\lightgray\fonts\tinymce-small.svg" />
+    <Content Include="Areas\assets\tinymce\skins\lightgray\fonts\tinymce.svg" />
+    <Content Include="Areas\assets\tinymce\skins\lightgray\img\anchor.gif" />
+    <Content Include="Areas\assets\tinymce\skins\lightgray\img\loader.gif" />
+    <Content Include="Areas\assets\tinymce\skins\lightgray\img\object.gif" />
+    <Content Include="Areas\assets\tinymce\skins\lightgray\img\trans.gif" />
+    <Content Include="Areas\assets\tinymce\skins\lightgray\skin.ie7.min.css" />
+    <Content Include="Areas\assets\tinymce\skins\lightgray\skin.min.css" />
+    <Content Include="Areas\assets\tinymce\themes\modern\theme.min.js" />
+    <Content Include="Areas\assets\tinymce\tinymce.min.js" />
+    <Content Include="assets\css\animate.css" />
+    <Content Include="assets\css\animsition.css" />
+    <Content Include="assets\css\bootstrap.css" />
+    <Content Include="assets\css\color-themes\color-1.css" />
+    <Content Include="assets\css\color-themes\color-2.css" />
+    <Content Include="assets\css\color-themes\color-3.css" />
+    <Content Include="assets\css\color-themes\color-4.css" />
+    <Content Include="assets\css\color-themes\color-5.css" />
+    <Content Include="assets\css\cubeportfolio.css" />
+    <Content Include="assets\css\flexslider.css" />
+    <Content Include="assets\css\font-awesome.css" />
+    <Content Include="assets\css\form.css" />
+    <Content Include="assets\css\magnific-popup.css" />
+    <Content Include="assets\css\material.min.css" />
+    <Content Include="assets\css\nouislider.css" />
+    <Content Include="assets\css\owl.carousel.css" />
+    <Content Include="assets\css\owl.video.play.html" />
+    <Content Include="assets\css\shop.css" />
+    <Content Include="assets\css\shortcodes.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\css\themify-icons.css" />
+    <Content Include="assets\css\zoomove.css" />
+    <Content Include="assets\fonts\flexslider\flexslider-icon-2.html" />
+    <Content Include="assets\fonts\flexslider\flexslider-icon-3.html" />
+    <Content Include="assets\fonts\flexslider\flexslider-icon-4.html" />
+    <Content Include="assets\fonts\flexslider\flexslider-icon.html" />
+    <Content Include="assets\fonts\flexslider\flexslider-icond41d.html" />
+    <Content Include="assets\fonts\fontawesome-webfont3e6e-2.html" />
+    <Content Include="assets\fonts\fontawesome-webfont3e6e-3.html" />
+    <Content Include="assets\fonts\fontawesome-webfont3e6e.html" />
+    <Content Include="assets\img\bg-footer.jpg" />
+    <Content Include="assets\img\logo-footer.png" />
+    <Content Include="assets\img\logo-fotter.png" />
+    <Content Include="assets\js\animsition.js" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\countTo.js" />
+    <Content Include="assets\js\cubeportfolio.js" />
+    <Content Include="assets\js\easing.js" />
+    <Content Include="assets\js\fitvids.js" />
+    <Content Include="assets\js\flexslider.js" />
+    <Content Include="assets\js\form.js" />
+    <Content Include="assets\js\gmap3.min.js" />
+    <Content Include="assets\js\jquery-2.2.2.min.js" />
+    <Content Include="assets\js\jquery.min.js" />
+    <Content Include="assets\js\magnific.popup.min.js" />
+    <Content Include="assets\js\main.js" />
+    <Content Include="assets\js\matchMedia.js" />
+    <Content Include="assets\js\material.min.js" />
+    <Content Include="assets\js\nouislider.js" />
+    <Content Include="assets\js\owl.carousel.min.js" />
+    <Content Include="assets\js\parallax.js" />
+    <Content Include="assets\js\rev-slider.js" />
+    <Content Include="assets\js\shop.js" />
+    <Content Include="assets\js\shortcodes.js" />
+    <Content Include="assets\js\validate.js" />
+    <Content Include="assets\js\waypoint.js" />
+    <Content Include="assets\js\zoomove.js" />
+    <Content Include="Content\alertifyjs\alertify.css" />
+    <Content Include="Content\alertifyjs\alertify.min.css" />
+    <Content Include="Content\alertifyjs\alertify.rtl.css" />
+    <Content Include="Content\alertifyjs\alertify.rtl.min.css" />
+    <Content Include="Content\alertifyjs\themes\bootstrap.css" />
+    <Content Include="Content\alertifyjs\themes\bootstrap.min.css" />
+    <Content Include="Content\alertifyjs\themes\bootstrap.rtl.css" />
+    <Content Include="Content\alertifyjs\themes\bootstrap.rtl.min.css" />
+    <Content Include="Content\alertifyjs\themes\default.css" />
+    <Content Include="Content\alertifyjs\themes\default.min.css" />
+    <Content Include="Content\alertifyjs\themes\default.rtl.css" />
+    <Content Include="Content\alertifyjs\themes\default.rtl.min.css" />
+    <Content Include="Content\alertifyjs\themes\semantic.css" />
+    <Content Include="Content\alertifyjs\themes\semantic.min.css" />
+    <Content Include="Content\alertifyjs\themes\semantic.rtl.css" />
+    <Content Include="Content\alertifyjs\themes\semantic.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\shortcodes.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Global.asax" />
+    <Content Include="includes\rev-slider\assets\coloredbg.png" />
+    <Content Include="includes\rev-slider\assets\gridtile.png" />
+    <Content Include="includes\rev-slider\assets\gridtile_3x3.png" />
+    <Content Include="includes\rev-slider\assets\gridtile_3x3_white.png" />
+    <Content Include="includes\rev-slider\assets\gridtile_white.png" />
+    <Content Include="includes\rev-slider\assets\loader.gif" />
+    <Content Include="includes\rev-slider\css\layers.css" />
+    <Content Include="includes\rev-slider\css\navigation.css" />
+    <Content Include="includes\rev-slider\css\settings.css" />
+    <Content Include="includes\rev-slider\js\extensions\revolution.extension.actions.min.js" />
+    <Content Include="includes\rev-slider\js\extensions\revolution.extension.carousel.min.js" />
+    <Content Include="includes\rev-slider\js\extensions\revolution.extension.kenburn.min.js" />
+    <Content Include="includes\rev-slider\js\extensions\revolution.extension.layeranimation.min.js" />
+    <Content Include="includes\rev-slider\js\extensions\revolution.extension.migration.min.js" />
+    <Content Include="includes\rev-slider\js\extensions\revolution.extension.navigation.min.js" />
+    <Content Include="includes\rev-slider\js\extensions\revolution.extension.parallax.min.js" />
+    <Content Include="includes\rev-slider\js\extensions\revolution.extension.slideanims.min.js" />
+    <Content Include="includes\rev-slider\js\extensions\revolution.extension.video.min.js" />
+    <Content Include="includes\rev-slider\js\jquery.themepunch.revolution.min.js" />
+    <Content Include="includes\rev-slider\js\jquery.themepunch.tools.min.js" />
+    <Content Include="scripts\ai.0.15.0-build58334.js" />
+    <Content Include="scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="scripts\alertify.js" />
+    <Content Include="scripts\alertify.min.js" />
+    <Content Include="scripts\bootstrap.js" />
+    <Content Include="scripts\bootstrap.min.js" />
+    <Content Include="Areas\OfficialAdmin\Views\IeltsTests\ViewAssignedTest.cshtml" />
+    <None Include="scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="scripts\jquery-1.10.2.js" />
+    <Content Include="scripts\jquery-1.10.2.min.js" />
+    <None Include="scripts\jquery.validate-vsdoc.js" />
+    <Content Include="scripts\jquery.validate.js" />
+    <Content Include="scripts\jquery.validate.min.js" />
+    <Content Include="scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="scripts\modernizr-2.6.2.js" />
+    <Content Include="scripts\respond.js" />
+    <Content Include="scripts\respond.min.js" />
+    <None Include="scripts\_references.js" />
+    <Content Include="Views\Home\Service.cshtml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\OfficialAdmin\Controllers\AccountsController.cs" />
+    <Compile Include="Areas\OfficialAdmin\Controllers\AchieversController.cs" />
+    <Compile Include="Areas\OfficialAdmin\Controllers\AlbumsController.cs" />
+    <Compile Include="Areas\OfficialAdmin\Controllers\CategoriesController.cs" />
+    <Compile Include="Areas\OfficialAdmin\Controllers\ClientlogoesController.cs" />
+    <Compile Include="Areas\OfficialAdmin\Controllers\ContactsController.cs" />
+    <Compile Include="Areas\OfficialAdmin\Controllers\CountersController.cs" />
+    <Compile Include="Areas\OfficialAdmin\Controllers\DefaultController.cs" />
+    <Compile Include="Areas\OfficialAdmin\Controllers\FeaturesController.cs" />
+    <Compile Include="Areas\OfficialAdmin\Controllers\IeltsTestsController.cs" />
+    <Compile Include="Areas\OfficialAdmin\Controllers\LogoesController.cs" />
+    <Compile Include="Areas\OfficialAdmin\Controllers\newsController.cs" />
+    <Compile Include="Areas\OfficialAdmin\Controllers\PagesController.cs" />
+    <Compile Include="Areas\OfficialAdmin\Controllers\ServicesController.cs" />
+    <Compile Include="Areas\OfficialAdmin\Controllers\SingleServicesController.cs" />
+    <Compile Include="Areas\OfficialAdmin\Controllers\slidersController.cs" />
+    <Compile Include="Areas\OfficialAdmin\Controllers\StudentDetailsController.cs" />
+    <Compile Include="Areas\OfficialAdmin\Controllers\TestimonialsController.cs" />
+    <Compile Include="Areas\OfficialAdmin\Controllers\VideosController.cs" />
+    <Compile Include="Areas\OfficialAdmin\Models\dbcontext.cs" />
+    <Compile Include="Areas\OfficialAdmin\Models\Helper.cs" />
+    <Compile Include="Areas\OfficialAdmin\Models\Home.cs" />
+    <Compile Include="Areas\OfficialAdmin\OfficialAdminAreaRegistration.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="MyRoleProvider\SiteRole.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\fonts\bootstrap\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\fonts\bootstrap\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\fonts\bootstrap\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\fonts\bootstrap\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\fonts\bootstrap\glyphicons-halflings-regular.woff2" />
+    <Content Include="assets\fonts\bootstrap\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="assets\fonts\fontawesome\fontawesome-webfont3e6e.eot" />
+    <Content Include="assets\fonts\fontawesome\fontawesome-webfont3e6e.woff2" />
+    <Content Include="assets\fonts\fontawesome\fontawesome-webfontd41d.eot" />
+    <Content Include="assets\fonts\themify-icons\themify9f24.eot" />
+    <Content Include="assets\fonts\themify-icons\themify9f24.svg" />
+    <Content Include="assets\fonts\themify-icons\themify9f24.ttf" />
+    <Content Include="assets\fonts\themify-icons\themify9f24.woff" />
+    <Content Include="assets\fonts\themify-icons\themifyd41d.eot" />
+    <Content Include="includes\rev-slider\css\closedhand.123" />
+    <Content Include="includes\rev-slider\css\openhand.123" />
+    <Content Include="includes\rev-slider\fonts\revicons\revicons90c690c6.eot" />
+    <Content Include="includes\rev-slider\fonts\revicons\revicons90c690c6.svg" />
+    <Content Include="includes\rev-slider\fonts\revicons\revicons90c690c6.ttf" />
+    <Content Include="includes\rev-slider\fonts\revicons\revicons90c690c6.woff" />
+    <Content Include="Views\Shared\Layout.cshtml" />
+    <Content Include="Areas\assets\font-awesome\fonts\fontawesome-webfontba72ba72.eot" />
+    <Content Include="Areas\assets\font-awesome\fonts\fontawesome-webfontba72ba72.ttf" />
+    <Content Include="Areas\assets\font-awesome\fonts\fontawesome-webfontba72ba72.woff" />
+    <Content Include="Areas\assets\font-awesome\fonts\fontawesome-webfontd41dd41d.eot" />
+    <Content Include="Areas\assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Areas\assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Areas\assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Areas\assets\fonts\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="Areas\assets\login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Areas\assets\login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Areas\assets\login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Areas\assets\login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Areas\assets\login\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Areas\assets\login\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Areas\assets\login\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Areas\assets\login\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Areas\assets\login\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Areas\assets\login\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Areas\assets\login\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Areas\assets\login\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Areas\assets\login\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Areas\assets\login\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Areas\assets\login\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Areas\assets\login\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Areas\assets\login\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Areas\assets\login\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Areas\assets\login\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Areas\assets\login\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Areas\assets\login\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Areas\assets\login\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Areas\assets\login\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Areas\assets\login\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Areas\assets\login\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Areas\assets\login\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Areas\assets\login\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Areas\assets\login\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Areas\assets\login\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Areas\assets\login\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Areas\assets\login\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Areas\assets\login\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Areas\assets\login\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Areas\assets\login\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.eot" />
+    <Content Include="Areas\assets\login\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.ttf" />
+    <Content Include="Areas\assets\login\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff" />
+    <Content Include="Areas\assets\login\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff2" />
+    <Content Include="Areas\assets\login\fonts\montserrat\Montserrat-Black.ttf" />
+    <Content Include="Areas\assets\login\fonts\montserrat\Montserrat-BlackItalic.ttf" />
+    <Content Include="Areas\assets\login\fonts\montserrat\Montserrat-Bold.ttf" />
+    <Content Include="Areas\assets\login\fonts\montserrat\Montserrat-BoldItalic.ttf" />
+    <Content Include="Areas\assets\login\fonts\montserrat\Montserrat-ExtraBold.ttf" />
+    <Content Include="Areas\assets\login\fonts\montserrat\Montserrat-ExtraBoldItalic.ttf" />
+    <Content Include="Areas\assets\login\fonts\montserrat\Montserrat-ExtraLight.ttf" />
+    <Content Include="Areas\assets\login\fonts\montserrat\Montserrat-ExtraLightItalic.ttf" />
+    <Content Include="Areas\assets\login\fonts\montserrat\Montserrat-Italic.ttf" />
+    <Content Include="Areas\assets\login\fonts\montserrat\Montserrat-Light.ttf" />
+    <Content Include="Areas\assets\login\fonts\montserrat\Montserrat-LightItalic.ttf" />
+    <Content Include="Areas\assets\login\fonts\montserrat\Montserrat-Medium.ttf" />
+    <Content Include="Areas\assets\login\fonts\montserrat\Montserrat-MediumItalic.ttf" />
+    <Content Include="Areas\assets\login\fonts\montserrat\Montserrat-Regular.ttf" />
+    <Content Include="Areas\assets\login\fonts\montserrat\Montserrat-SemiBold.ttf" />
+    <Content Include="Areas\assets\login\fonts\montserrat\Montserrat-SemiBoldItalic.ttf" />
+    <Content Include="Areas\assets\login\fonts\montserrat\Montserrat-Thin.ttf" />
+    <Content Include="Areas\assets\login\fonts\montserrat\Montserrat-ThinItalic.ttf" />
+    <Content Include="Areas\assets\login\fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="Areas\assets\login\fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="Areas\assets\login\fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="Areas\assets\login\fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="Areas\assets\login\fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="Areas\assets\login\fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="Areas\assets\login\fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="Areas\assets\login\fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="Areas\assets\login\fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="Areas\assets\login\fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="Areas\assets\login\fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="Areas\assets\login\fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="Areas\assets\login\fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="Areas\assets\login\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="Areas\assets\login\fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="Areas\assets\login\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="Areas\assets\login\fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="Areas\assets\login\fonts\poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="Areas\assets\login\fonts\raleway\Raleway-Black.ttf" />
+    <Content Include="Areas\assets\login\fonts\raleway\Raleway-BlackItalic.ttf" />
+    <Content Include="Areas\assets\login\fonts\raleway\Raleway-Bold.ttf" />
+    <Content Include="Areas\assets\login\fonts\raleway\Raleway-BoldItalic.ttf" />
+    <Content Include="Areas\assets\login\fonts\raleway\Raleway-ExtraBold.ttf" />
+    <Content Include="Areas\assets\login\fonts\raleway\Raleway-ExtraBoldItalic.ttf" />
+    <Content Include="Areas\assets\login\fonts\raleway\Raleway-ExtraLight.ttf" />
+    <Content Include="Areas\assets\login\fonts\raleway\Raleway-ExtraLightItalic.ttf" />
+    <Content Include="Areas\assets\login\fonts\raleway\Raleway-Italic.ttf" />
+    <Content Include="Areas\assets\login\fonts\raleway\Raleway-Light.ttf" />
+    <Content Include="Areas\assets\login\fonts\raleway\Raleway-LightItalic.ttf" />
+    <Content Include="Areas\assets\login\fonts\raleway\Raleway-Medium.ttf" />
+    <Content Include="Areas\assets\login\fonts\raleway\Raleway-MediumItalic.ttf" />
+    <Content Include="Areas\assets\login\fonts\raleway\Raleway-Regular.ttf" />
+    <Content Include="Areas\assets\login\fonts\raleway\Raleway-SemiBold.ttf" />
+    <Content Include="Areas\assets\login\fonts\raleway\Raleway-SemiBoldItalic.ttf" />
+    <Content Include="Areas\assets\login\fonts\raleway\Raleway-Thin.ttf" />
+    <Content Include="Areas\assets\login\fonts\raleway\Raleway-ThinItalic.ttf" />
+    <Content Include="Areas\assets\login\fonts\ubuntu\Ubuntu-Bold.ttf" />
+    <Content Include="Areas\assets\login\fonts\ubuntu\Ubuntu-BoldItalic.ttf" />
+    <Content Include="Areas\assets\login\fonts\ubuntu\Ubuntu-Italic.ttf" />
+    <Content Include="Areas\assets\login\fonts\ubuntu\Ubuntu-Light.ttf" />
+    <Content Include="Areas\assets\login\fonts\ubuntu\Ubuntu-LightItalic.ttf" />
+    <Content Include="Areas\assets\login\fonts\ubuntu\Ubuntu-Medium.ttf" />
+    <Content Include="Areas\assets\login\fonts\ubuntu\Ubuntu-MediumItalic.ttf" />
+    <Content Include="Areas\assets\login\fonts\ubuntu\Ubuntu-Regular.ttf" />
+    <Content Include="Areas\assets\login\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Areas\assets\login\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Areas\assets\login\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Areas\assets\login\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Areas\assets\login\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Areas\assets\login\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Areas\assets\tinymce\langs\readme.md" />
+    <Content Include="Areas\assets\tinymce\skins\lightgray\fonts\tinymce-small.eot" />
+    <Content Include="Areas\assets\tinymce\skins\lightgray\fonts\tinymce-small.ttf" />
+    <Content Include="Areas\assets\tinymce\skins\lightgray\fonts\tinymce-small.woff" />
+    <Content Include="Areas\assets\tinymce\skins\lightgray\fonts\tinymce.eot" />
+    <Content Include="Areas\assets\tinymce\skins\lightgray\fonts\tinymce.ttf" />
+    <Content Include="Areas\assets\tinymce\skins\lightgray\fonts\tinymce.woff" />
+    <Content Include="Areas\OfficialAdmin\Views\Accounts\Create.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Accounts\Delete.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Accounts\Details.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Accounts\Edit.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Accounts\Index.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Accounts\Login.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Albums\Create.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Albums\Delete.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Albums\Details.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Albums\Edit.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Albums\Index.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Categories\Create.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Categories\Delete.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Categories\Details.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Categories\Edit.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Categories\Index.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Clientlogoes\Create.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Clientlogoes\Delete.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Clientlogoes\Details.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Clientlogoes\Edit.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Clientlogoes\Index.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Contacts\Create.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Contacts\Delete.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Contacts\Details.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Contacts\Edit.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Contacts\Index.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Default\Index.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Features\Create.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Features\Delete.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Features\Details.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Features\Edit.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Features\Index.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\IeltsTests\AssignTest.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\IeltsTests\Create.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\IeltsTests\Delete.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\IeltsTests\Details.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\IeltsTests\Edit.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\IeltsTests\Index.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Logoes\Create.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Logoes\Delete.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Logoes\Details.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Logoes\Edit.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Logoes\Index.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\news\Create.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\news\Delete.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\news\Details.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\news\Edit.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\news\Index.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Services\Create.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Services\Delete.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Services\Details.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Services\Edit.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Services\Index.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Shared\Layout.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\sliders\Create.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\sliders\Delete.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\sliders\Details.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\sliders\Edit.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\sliders\Index.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\StudentDetails\Create.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\StudentDetails\Delete.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\StudentDetails\Details.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\StudentDetails\Edit.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\StudentDetails\Index.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Testimonials\Create.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Testimonials\Delete.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Testimonials\Details.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Testimonials\Edit.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Testimonials\Index.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Videos\Create.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Videos\Delete.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Videos\Details.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Videos\Edit.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Videos\Index.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\web.config" />
+    <Content Include="Views\Home\Albums.cshtml" />
+    <Content Include="Views\Home\CompanyOverview.cshtml" />
+    <Content Include="Views\Home\ContactUs.cshtml" />
+    <Content Include="Views\Home\FounderMessage.cshtml" />
+    <Content Include="Views\Home\Gallery.cshtml" />
+    <Content Include="Views\Home\Home.cshtml" />
+    <Content Include="Views\Home\OurMission.cshtml" />
+    <Content Include="Views\Home\OurVision.cshtml" />
+    <Content Include="Views\Home\ServiceDetails.cshtml" />
+    <Content Include="Views\Home\ShiningStars.cshtml" />
+    <Content Include="Views\Home\Test.cshtml" />
+    <Content Include="Views\Home\Video.cshtml" />
+    <Content Include="Views\Home\WhyChooseUs.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Pages\Create.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Pages\Delete.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Pages\Details.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Pages\Edit.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Pages\Index.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Achievers\Create.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Achievers\Delete.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Achievers\Details.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Achievers\Edit.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Achievers\Index.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Counters\Create.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Counters\Delete.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Counters\Details.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Counters\Edit.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\Counters\Index.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\SingleServices\Create.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\SingleServices\Delete.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\SingleServices\Details.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\SingleServices\Edit.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\SingleServices\Index.cshtml" />
+    <Content Include="scripts\jquery-1.10.2.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+    <Folder Include="UploadedFiles\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>14304</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:14304/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
