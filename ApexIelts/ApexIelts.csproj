@@ -316,7 +316,7 @@
     <Content Include="assets\css\animate.css" />
     <Content Include="assets\css\animsition.css" />
     <Content Include="assets\css\bootstrap.css" />
-    <Content Include="assets\css\color-themes\color-1.css" />
+    <Content Include="Content\color-1.css" />
     <Content Include="assets\css\color-themes\color-2.css" />
     <Content Include="assets\css\color-themes\color-3.css" />
     <Content Include="assets\css\color-themes\color-4.css" />
@@ -332,7 +332,7 @@
     <Content Include="assets\css\owl.video.play.html" />
     <Content Include="assets\css\shop.css" />
     <Content Include="assets\css\shortcodes.css" />
-    <Content Include="assets\css\style.css" />
+    <Content Include="Content\style.css" />
     <Content Include="assets\css\themify-icons.css" />
     <Content Include="assets\css\zoomove.css" />
     <Content Include="assets\fonts\flexslider\flexslider-icon-2.html" />
@@ -415,27 +415,54 @@
     <Content Include="scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="scripts\alertify.js" />
     <Content Include="scripts\alertify.min.js" />
+    <Content Include="scripts\animsition.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
     <Content Include="Areas\OfficialAdmin\Views\IeltsTests\ViewAssignedTest.cshtml" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="scripts\countTo.js" />
+    <Content Include="scripts\cubeportfolio.js" />
+    <Content Include="scripts\easing.js" />
+    <Content Include="scripts\fitvids.js" />
+    <Content Include="scripts\flexslider.js" />
+    <Content Include="scripts\form.js" />
+    <Content Include="scripts\gmap3.min.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
     <None Include="scripts\jquery.validate-vsdoc.js" />
+    <Content Include="scripts\jquery-2.2.2.min.js" />
+    <Content Include="scripts\jquery.min.js" />
+    <Content Include="scripts\jquery.themepunch.revolution.min.js" />
+    <Content Include="scripts\jquery.themepunch.tools.min.js" />
     <Content Include="scripts\jquery.validate.js" />
     <Content Include="scripts\jquery.validate.min.js" />
     <Content Include="scripts\jquery.validate.unobtrusive.js" />
     <Content Include="scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="scripts\magnific.popup.min.js" />
+    <Content Include="scripts\main.js" />
+    <Content Include="scripts\matchMedia.js" />
+    <Content Include="scripts\material.min.js" />
     <Content Include="scripts\modernizr-2.6.2.js" />
+    <Content Include="scripts\nouislider.js" />
+    <Content Include="scripts\owl.carousel.min.js" />
+    <Content Include="scripts\parallax.js" />
     <Content Include="scripts\respond.js" />
     <Content Include="scripts\respond.min.js" />
     <None Include="scripts\_references.js" />
+    <Content Include="scripts\rev-slider.js" />
+    <Content Include="scripts\revolution.extension.parallax.min.js" />
+    <Content Include="scripts\shop.js" />
+    <Content Include="scripts\shortcodes.js" />
+    <Content Include="scripts\validate.js" />
+    <Content Include="scripts\waypoint.js" />
+    <Content Include="scripts\zoomove.js" />
     <Content Include="Views\Home\Service.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\OfficialAdmin\Controllers\AccountsController.cs" />
     <Compile Include="Areas\OfficialAdmin\Controllers\AchieversController.cs" />
