@@ -541,7 +541,7 @@ h6 { font-size: 1.143em; } /* 16px */
 #top-bar .top-bar-inner-wrap .top-bar-socials { display: table-cell; width: 55%; text-align: right; vertical-align: middle; }
 
 /* Top Bar Content */
-#top-bar .top-bar-content.style-1 { width: 70%; }
+#top-bar .top-bar-content.style-1 { width: 75%; }
 #top-bar .top-bar-content.style-1 .content { position: relative; padding-left: 20px; margin-right: 20px; margin-left: 5px; }
 #top-bar .top-bar-content.style-1 .content:after { position: absolute; top: -3px; left: 0; content: ""; font-size: 18px; font-family: "Fontawesome"; color: #182331; }
 #top-bar .top-bar-content.style-1 .content.phone:after { content: "\f095"; }

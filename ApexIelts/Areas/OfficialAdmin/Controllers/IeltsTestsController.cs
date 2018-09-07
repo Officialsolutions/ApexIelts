@@ -195,12 +195,5 @@ namespace AdminPaneNew.Areas.OfficialAdmin.Controllers
 
             return View(assignTest);
         }
-        [Authorize(Roles = "Admin")]
-        public ActionResult ViewAssignedTest()
-        {
-             var assignTest = db.AssignTests.Include(i => i.Ieltsid).Include(x => x.Studentid);
-           // var assignTest = db.AssignTests.SelectMany(i=>i.Studentid,i=>i.
-            return View(assignTest.ToList());
-        }
     }
 }

@@ -79,11 +79,15 @@ namespace ApexIelts.Controllers
             //return View();
         }
         // GET: Default/Details/5
-        public ActionResult StudentDahsboard()
+        public ActionResult StudentDahsboard(int id)
+        {
+           AssignTest assign = db.AssignTests.Where(x => x.Assignid == id).FirstOrDefault();
+            return View(assign);
+        }
+        public ActionResult StudentProfile()
         {
             return View();
         }
-
         // GET: Default/Create
         public ActionResult Test()
         {
@@ -205,6 +209,35 @@ namespace ApexIelts.Controllers
 
             return RedirectToAction("ServiceDetails");
 
+        }
+
+        [HttpPost]
+        public ActionResult Login(StudentDetail model, string returnUrl)
+        {
+            dbcontext db = new dbcontext();
+            var dataItem = db.StudentDetails.Where(x => x.UserName == model.UserName && x.Password == model.Password).ToList();
+            if (dataItem != null)
+            {
+                //FormsAuthentication.SetAuthCookie(dataItem.Usename, false);
+                if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")
+                         && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
+                {
+                    return Redirect(returnUrl);
+                }
+                else
+                {
+                    TempData["Success"] = "Login Successfully";
+                    Session["student"] = dataItem.FirstOrDefault().Studentid;
+
+                    return RedirectToAction("StudentProfile", "Home");
+
+                }
+            }
+            else
+            {
+                ModelState.AddModelError("", "Invalid user/pass");
+                return View();
+            }
         }
     }
 }

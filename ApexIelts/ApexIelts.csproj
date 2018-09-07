@@ -418,7 +418,9 @@
     <Content Include="scripts\animsition.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
-    <Content Include="Areas\OfficialAdmin\Views\IeltsTests\ViewAssignedTest.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\AssignTests\Details.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\AssignTests\Edit.cshtml" />
+    <Content Include="Areas\OfficialAdmin\Views\AssignTests\Index.cshtml" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\countTo.js" />
     <Content Include="scripts\cubeportfolio.js" />
@@ -456,6 +458,40 @@
     <Content Include="scripts\validate.js" />
     <Content Include="scripts\waypoint.js" />
     <Content Include="scripts\zoomove.js" />
+    <Content Include="UploadedFiles\0024product.jpg" />
+    <Content Include="UploadedFiles\065aservice-2.jpg" />
+    <Content Include="UploadedFiles\0eb8service-5.jpg" />
+    <Content Include="UploadedFiles\0ef6slide-3.jpg" />
+    <Content Include="UploadedFiles\1a40about-1.jpg" />
+    <Content Include="UploadedFiles\1c58product.jpg" />
+    <Content Include="UploadedFiles\2db1images.jpg" />
+    <Content Include="UploadedFiles\2e0fservice-4.jpg" />
+    <Content Include="UploadedFiles\53a0about-1.jpg" />
+    <Content Include="UploadedFiles\5a12service-6.jpg" />
+    <Content Include="UploadedFiles\628eteam-4.jpg" />
+    <Content Include="UploadedFiles\654cabout-2.jpg" />
+    <Content Include="UploadedFiles\6840bg-video-1.jpg" />
+    <Content Include="UploadedFiles\6932service-1.jpg" />
+    <Content Include="UploadedFiles\69be1.jpg" />
+    <Content Include="UploadedFiles\6faeslide-3.jpg" />
+    <Content Include="UploadedFiles\73bfabout-2.jpg" />
+    <Content Include="UploadedFiles\7d50partner-1.jpg" />
+    <Content Include="UploadedFiles\93d71.jpg" />
+    <Content Include="UploadedFiles\9982new-1.jpg" />
+    <Content Include="UploadedFiles\9a13service-2.jpg" />
+    <Content Include="UploadedFiles\adc1service-6.jpg" />
+    <Content Include="UploadedFiles\c1e0service-1.jpg" />
+    <Content Include="UploadedFiles\c6f9service-1.jpg" />
+    <Content Include="UploadedFiles\c8f2ring.mp3" />
+    <Content Include="UploadedFiles\c92c1.jpg" />
+    <Content Include="UploadedFiles\cd76partner-1.jpg" />
+    <Content Include="UploadedFiles\e2a9slide-5.jpg" />
+    <Content Include="UploadedFiles\e579new-8.jpg" />
+    <Content Include="UploadedFiles\edb2service-1.jpg" />
+    <Content Include="UploadedFiles\f3a0team-1.jpg" />
+    <Content Include="UploadedFiles\f451service-4.jpg" />
+    <Content Include="UploadedFiles\f861service-5.jpg" />
+    <Content Include="UploadedFiles\feedbg-video-2.jpg" />
     <Content Include="Views\Home\Service.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -467,6 +503,7 @@
     <Compile Include="Areas\OfficialAdmin\Controllers\AccountsController.cs" />
     <Compile Include="Areas\OfficialAdmin\Controllers\AchieversController.cs" />
     <Compile Include="Areas\OfficialAdmin\Controllers\AlbumsController.cs" />
+    <Compile Include="Areas\OfficialAdmin\Controllers\AssignTestsController.cs" />
     <Compile Include="Areas\OfficialAdmin\Controllers\CategoriesController.cs" />
     <Compile Include="Areas\OfficialAdmin\Controllers\ClientlogoesController.cs" />
     <Compile Include="Areas\OfficialAdmin\Controllers\ContactsController.cs" />
@@ -752,6 +789,9 @@
     <Content Include="Areas\OfficialAdmin\Views\SingleServices\Index.cshtml" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\StudentDahsboard.cshtml" />
+    <Content Include="Views\Home\StudentProfile.cshtml" />
+    <Content Include="UploadedFiles\95a8WEB.pdf" />
+    <Content Include="UploadedFiles\WEB.pdf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -762,7 +802,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="UploadedFiles\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

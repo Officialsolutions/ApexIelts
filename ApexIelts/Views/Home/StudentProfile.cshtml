@@ -1,0 +1,94 @@
+﻿@using AdminPaneNew.Areas.OfficialAdmin.Models
+@{
+    ViewBag.Title = "StudentProfile";
+    Layout = "~/Views/Shared/Layout.cshtml";
+    dbcontext db = new dbcontext();
+    int sess = Convert.ToInt32(Session["student"]);
+    var test = db.AssignTests.Where(x => x.Studentid == sess).ToList();
+    var profile = db.StudentDetails.Where(x => x.Studentid == sess).FirstOrDefault();
+}
+
+<h2>StudentProfile</h2>
+
+@section Keyword {
+<meta name="description" content="Template built for Business & Financial, Consulting, Accounting, Broker">
+<meta name="keywords" content="advisor, analytical, audit, broker, brokerage, business, company, Consultech, consulting, consulting psd, finance, financial, insurance, trader, trading">
+}
+
+@*BreadCrumb*@
+
+<div id="featured-title" class="clearfix featured-title-left">
+    <div id="featured-title-inner" class="container clearfix">
+        <div class="featured-title-inner-wrap">
+            <div id="breadcrumbs">
+                <div class="breadcrumbs-inner">
+                    <div class="breadcrumb-trail">
+                        <a href="@Url.Action("Home")" title="Apex Ielts" rel="home" class="trail-begin">Home</a>
+                        <span class="sep"><span class="fa fa-angle-right" aria-hidden="true"></span></span>
+                        <span class="trail-end">Student Dashboard</span>
+                    </div>
+                </div>
+            </div>
+            <div class="featured-title-heading-wrap">
+                <h1 class="featured-title-heading">Student Profile</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*End BreadCrumb*@
+<div class="container" style="padding:40px 0px">
+    <div class="col-md-9">
+
+        <div class="wprt-spacer clearfix" data-desktop="23" data-mobi="20" data-smobi="20"></div>
+        <table>
+            <tr>
+                <td>Name : </td>
+                <td>@profile.Name</td>
+            </tr>
+            <tr>
+                <td>Father Name : </td>
+                <td>@profile.FatherName</td>
+            </tr>
+            <tr>
+                <td>Mobile No.: </td>
+                <td>@profile.Mobile</td>
+            </tr>
+            <tr>
+                <td>Qualification : </td>
+                <td>@profile.Qualification</td>
+            </tr>
+            <tr>
+                <td>Course Type : </td>
+                <td>@profile.CourseType</td>
+            </tr>
+            <tr>
+                <td>Roll No. : </td>
+                <td>@profile.RollNo</td>
+            </tr>
+            <tr>
+                <td>Joining Date : </td>
+                <td>@profile.JoiningDate</td>
+            </tr>
+          
+        </table>
+        <div class="wprt-spacer clearfix" data-desktop="56" data-mobi="30" data-smobi="20"></div>
+
+    </div>
+    <div class="col-md-3">
+        <nav class="wprt-navbar style-1">
+            <h3>Assigned Modules</h3>
+            <ul class="menu">
+                @foreach (var n in test)
+
+                {
+                    <li class="nav-item">
+                        @Html.ActionLink(n.IeltsTest.Name, "StudentDahsboard", new { id = n.Assignid })
+                        @*<a href="">@n.IeltsTest.Name</a>*@
+                    </li>
+                }
+            </ul>
+        </nav>
+        <div class="wprt-spacer clearfix" data-desktop="0" data-mobi="40" data-smobi="30"></div>
+    </div>
+</div>

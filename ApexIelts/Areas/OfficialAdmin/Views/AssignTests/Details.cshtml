@@ -1,0 +1,51 @@
+﻿@model AdminPaneNew.Areas.OfficialAdmin.Models.AssignTest
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/OfficialAdmin/Views/Shared/Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AssignTest</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IeltsTest.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IeltsTest.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentDetail.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentDetail.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Assignid }) |
+     @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-danger" })
+</p>
