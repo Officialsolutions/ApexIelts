@@ -20,12 +20,11 @@ namespace ApexIelts
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js",
                       "~/Scripts/jquery.min.js",
+                      "~/Scripts/respond.js",
                       "~/Scripts/animsition.js",
                       "~/Scripts/waypoint.js",
-
+                      "~/Scripts/bootstrap.js",
                       "~/Scripts/parallax.js",
                       "~/Scripts/matchMedia.js",
                       "~/Scripts/fitvids.js",

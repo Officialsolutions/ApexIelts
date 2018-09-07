@@ -258,4 +258,3 @@ C:\Github\Apex\ApexIelts\ApexIelts\bin\System.Web.Helpers.xml
 C:\Github\Apex\ApexIelts\ApexIelts\bin\System.Web.Mvc.xml
 C:\Github\Apex\ApexIelts\ApexIelts\obj\Debug\ApexIelts.dll
 C:\Github\Apex\ApexIelts\ApexIelts\obj\Debug\ApexIelts.pdb
-C:\Github\Apex\ApexIelts\ApexIelts\obj\Debug\ApexIelts.csprojResolveAssemblyReference.cache
