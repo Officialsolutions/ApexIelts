@@ -315,3 +315,4 @@ G:\pawandeep\latest\ApexIelts\ApexIelts\bin\System.Web.Mvc.xml
 G:\pawandeep\latest\ApexIelts\ApexIelts\obj\Debug\ApexIelts.dll
 G:\pawandeep\latest\ApexIelts\ApexIelts\obj\Debug\ApexIelts.pdb
 G:\pawandeep\latest\ApexIelts\ApexIelts\obj\Debug\ApexIelts.csprojResolveAssemblyReference.cache
+C:\Github\Apex\ApexIelts\ApexIelts\obj\Debug\ApexIelts.csprojResolveAssemblyReference.cache

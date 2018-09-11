@@ -492,6 +492,7 @@
     <Content Include="UploadedFiles\f451service-4.jpg" />
     <Content Include="UploadedFiles\f861service-5.jpg" />
     <Content Include="UploadedFiles\feedbg-video-2.jpg" />
+    <Content Include="UploadedFiles\testi.jpg" />
     <Content Include="Views\Home\Service.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

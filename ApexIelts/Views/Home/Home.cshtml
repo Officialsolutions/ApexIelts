@@ -99,7 +99,7 @@
                                 <div class="wprt-image-box style-1 clearfix ">
                                  <div class="item">
                                   <div class="thumb">
-                                    <img src="~/UploadedFiles/@ser.Image" alt="Image">
+                                    <img src="~/UploadedFiles/@ser.Thumbnail" alt="Image">
                                   </div>
 
                                  <div class="text-wrap">
@@ -108,7 +108,7 @@
                                     </h3>
                                     <div class="desc">@Html.Raw(ser.ShortDescription)</div>
                                     <div class="wprt-link">
-                                        @Html.ActionLink("READ MORE", "ServiceDetails", new { id = ser.Serviceid }, new { @class = "small wprt-button outline ol-accent" })
+                                        @Html.ActionLink("READ MORE", "Service", new { id = ser.Serviceid }, new { @class = "small wprt-button outline ol-accent" })
                                     </div>
                                 </div>
                                 </div>
@@ -255,7 +255,7 @@
 </div>
 
 <div class="row-contact-2">
-    <div class="container-fluid">
+    <div class="container-fluid testi">
         <div class="row">
             <div class="col-md-6">
                 <div class="wd-570">
