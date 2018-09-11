@@ -120,7 +120,7 @@
                                             {
                                             <li>
                                                 @Html.ActionLink(a.Name, "Service", new { id = a.Serviceid })
-                                                <ul>
+                                                <ul style="position: absolute;top: 0px;">
                                                     @foreach (var nn in sser.Where(x=>x.Serviceid==a.Serviceid))
                                                         {
                                                         <li>

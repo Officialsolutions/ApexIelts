@@ -1,7 +1,11 @@
 ﻿@model AdminPaneNew.Areas.OfficialAdmin.Models.Service
+@using AdminPaneNew.Areas.OfficialAdmin.Models
 @{
     ViewBag.Title = "Service";
     Layout = "~/Views/Shared/Layout.cshtml";
+    dbcontext db = new dbcontext();
+    List<Service> service = db.Services.ToList();
+
 }
 
 @section Keyword {
@@ -48,21 +52,14 @@
     <div class="col-md-3">
         <nav class="wprt-navbar style-1">
             <ul class="menu">
-                <li class="nav-item">
-                    <a href="@Url.Action("CompanyOverview")">Company OverView</a>
-                </li>
-                <li class="nav-item">
-                    <a href="@Url.Action("FounderMessage")">Founder Message</a>
-                </li>
-                <li class="nav-item">
-                    <a href="@Url.Action("WhyChooseUs")">Why Choose Us</a>
-                </li>
-                <li class="nav-item">
-                    <a href="@Url.Action("OurMission")">Our Mission</a>
-                </li>
-                <li class="nav-item">
-                    <a href="@Url.Action("OurVision")">Our Vision</a>
-                </li>
+                @foreach (var a in service)
+                {
+                    <li class="nav-item">
+                       @Html.ActionLink(a.Name, "Service", new { id = a.Serviceid })
+                    </li>
+                }
+               
+               
             </ul>
         </nav>
         <div class="wprt-spacer clearfix" data-desktop="35" data-mobi="20" data-smobi="20"></div>
