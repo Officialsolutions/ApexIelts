@@ -332,6 +332,8 @@
     <Content Include="assets\css\owl.video.play.html" />
     <Content Include="assets\css\shop.css" />
     <Content Include="assets\css\shortcodes.css" />
+    <Content Include="Content\responsiveslides.css" />
+    <Content Include="scripts\responsiveslides.min.js" />
     <Content Include="Content\style.css" />
     <Content Include="assets\css\themify-icons.css" />
     <Content Include="assets\css\zoomove.css" />
@@ -525,7 +527,7 @@
     <Compile Include="Areas\OfficialAdmin\Models\Helper.cs" />
     <Compile Include="Areas\OfficialAdmin\Models\Home.cs" />
     <Compile Include="Areas\OfficialAdmin\OfficialAdminAreaRegistration.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="includes\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -802,6 +804,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
