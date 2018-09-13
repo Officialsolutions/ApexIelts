@@ -345,6 +345,8 @@
     <Content Include="assets\css\owl.video.play.html" />
     <Content Include="assets\css\shop.css" />
     <Content Include="assets\css\shortcodes.css" />
+    <Content Include="Content\responsiveslides.css" />
+    <Content Include="scripts\responsiveslides.min.js" />
     <Content Include="Content\style.css" />
     <Content Include="assets\css\themify-icons.css" />
     <Content Include="assets\css\zoomove.css" />
@@ -512,6 +514,7 @@
     <Content Include="UploadedFiles\f451service-4.jpg" />
     <Content Include="UploadedFiles\f861service-5.jpg" />
     <Content Include="UploadedFiles\feedbg-video-2.jpg" />
+    <Content Include="UploadedFiles\testi.jpg" />
     <Content Include="Views\Home\Service.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -545,8 +548,12 @@
     <Compile Include="Areas\OfficialAdmin\Models\Helper.cs" />
     <Compile Include="Areas\OfficialAdmin\Models\Home.cs" />
     <Compile Include="Areas\OfficialAdmin\OfficialAdminAreaRegistration.cs" />
+<<<<<<< HEAD
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ZipAPIController.cs" />
+=======
+    <Compile Include="includes\HomeController.cs" />
+>>>>>>> 4333cfb484a3c26fd4953d2903556a21d49de281
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -823,6 +830,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
     <Folder Include="zip\" />
   </ItemGroup>

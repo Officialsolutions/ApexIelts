@@ -14,13 +14,14 @@
     List<Counter> counter = db.Counters.ToList();
 }
 
-<div class="rev_slider_wrapper fullwidthbanner-container">
-    <div id="rev-slider-1" class="rev_slider fullwidthabanner">
-        <ul>
+
+
+<ul class="rslides">
 @if (ss != null)
 {
     foreach (var s in ss)
     {
+<<<<<<< HEAD
             <!-- Slide -->
             <li data-transition="random">
                 <!-- Main Image -->
@@ -69,13 +70,14 @@
                    
                 </div>
             </li>
+=======
+
+    <li><img src="~/UploadedFiles/@s.Image" alt=""></li>
+>>>>>>> 4333cfb484a3c26fd4953d2903556a21d49de281
     }
-} 
-            <!--/Slide -->
-        </ul>
-        <div class="tp-bannertimer tp-bottom"></div>
-    </div>
-</div>
+}
+ 
+</ul>
 
 @*What We Are*@
 
@@ -99,7 +101,7 @@
                                 <div class="wprt-image-box style-1 clearfix ">
                                  <div class="item">
                                   <div class="thumb">
-                                    <img src="~/UploadedFiles/@ser.Image" alt="Image">
+                                    <img src="~/UploadedFiles/@ser.Thumbnail" alt="Image">
                                   </div>
 
                                  <div class="text-wrap">
@@ -108,7 +110,7 @@
                                     </h3>
                                     <div class="desc">@Html.Raw(ser.ShortDescription)</div>
                                     <div class="wprt-link">
-                                        @Html.ActionLink("READ MORE", "ServiceDetails", new { id = ser.Serviceid }, new { @class = "small wprt-button outline ol-accent" })
+                                        @Html.ActionLink("READ MORE", "Service", new { id = ser.Serviceid }, new { @class = "small wprt-button outline ol-accent" })
                                     </div>
                                 </div>
                                 </div>
@@ -209,7 +211,9 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="wprt-headings clearfix text-center" style="padding: 20px 0px;">
-                    <h2 class="heading">Recent Achiever</h2>
+                    <div class="sec-title center">
+                        <h2>Shining <span>Stars</span></h2>
+                    </div>
                     @*<div class="sub-heading">We are here to Acelerate your business and help you find the way.</div>*@
                 </div>
                 <div class="wprt-portfolio-grid" data-column="4" data-column2="3" data-column3="2" data-column4="1" data-gaph="30" data-gapv="30">
@@ -255,7 +259,7 @@
 </div>
 
 <div class="row-contact-2">
-    <div class="container-fluid">
+    <div class="container-fluid testi">
         <div class="row">
             <div class="col-md-6">
                 <div class="wd-570">
@@ -293,7 +297,7 @@
         </div><!-- /.row -->
     </div><!-- /.container-fluid -->
 </div>
-<div class="row-partner-1">
+<div class="row-partner-1" style="    padding: 40px 0px;">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
