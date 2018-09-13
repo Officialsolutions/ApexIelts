@@ -15,7 +15,7 @@ namespace AdminPaneNew.Areas.OfficialAdmin.Controllers
     {
         private dbcontext db = new dbcontext();
         Helper help = new Helper();
-        public static string img;
+        public static string img,aud;
         // GET: OfficialAdmin/IeltsTests
         public ActionResult Index()
         {
@@ -76,6 +76,7 @@ namespace AdminPaneNew.Areas.OfficialAdmin.Controllers
             }
             IeltsTest ieltsTest = db.IeltsTests.Find(id);
             img = ieltsTest.Image;
+            aud = ieltsTest.Audio;
             if (ieltsTest == null)
             {
                 return HttpNotFound();
@@ -89,15 +90,30 @@ namespace AdminPaneNew.Areas.OfficialAdmin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Ieltsid,Name,Categoryid,TestType,Image,Url,Audio,date")] IeltsTest ieltsTest, HttpPostedFileBase file, Helper Help)
+        public ActionResult Edit([Bind(Include = "Ieltsid,Name,Categoryid,TestType,Image,Url,Audio,date")] IeltsTest ieltsTest, HttpPostedFileBase file, HttpPostedFileBase audio, Helper Help)
         {
             if (ModelState.IsValid)
             {
                 ieltsTest.date = System.DateTime.Now;
                 ieltsTest.Image = file != null ? Help.uploadfile(file) : img;
+           
                 #region delete file
                 string fullPath = Request.MapPath("~/UploadedFiles/" + img);
                 if (img == ieltsTest.Image)
+                {
+                }
+                else
+                {
+                    if (System.IO.File.Exists(fullPath))
+                    {
+                        System.IO.File.Delete(fullPath);
+                    }
+                }
+                #endregion
+                ieltsTest.Audio = audio != null ? Help.uploadfile(audio) : aud;
+                #region delete file
+                string fullPath2 = Request.MapPath("~/UploadedFiles/" + aud);
+                if (aud == ieltsTest.Audio)
                 {
                 }
                 else

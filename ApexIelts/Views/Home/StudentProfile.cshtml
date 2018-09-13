@@ -6,13 +6,11 @@
     int sess = Convert.ToInt32(Session["student"]);
     var test = db.AssignTests.Where(x => x.Studentid == sess).ToList();
     var profile = db.StudentDetails.Where(x => x.Studentid == sess).FirstOrDefault();
+    var cat = db.Categories.ToList();
 }
-
-<h2>StudentProfile</h2>
-
 @section Keyword {
-<meta name="description" content="Template built for Business & Financial, Consulting, Accounting, Broker">
-<meta name="keywords" content="advisor, analytical, audit, broker, brokerage, business, company, Consultech, consulting, consulting psd, finance, financial, insurance, trader, trading">
+    <meta name="description" content="Template built for Business & Financial, Consulting, Accounting, Broker">
+    <meta name="keywords" content="advisor, analytical, audit, broker, brokerage, business, company, Consultech, consulting, consulting psd, finance, financial, insurance, trader, trading">
 }
 
 @*BreadCrumb*@
@@ -70,7 +68,7 @@
                 <td>Joining Date : </td>
                 <td>@profile.JoiningDate</td>
             </tr>
-          
+
         </table>
         <div class="wprt-spacer clearfix" data-desktop="56" data-mobi="30" data-smobi="20"></div>
 
@@ -79,12 +77,11 @@
         <nav class="wprt-navbar style-1">
             <h3>Assigned Modules</h3>
             <ul class="menu">
-                @foreach (var n in test)
+                @foreach (var n in cat)
 
                 {
                     <li class="nav-item">
-                        @Html.ActionLink(n.IeltsTest.Name, "StudentDahsboard", new { id = n.Assignid })
-                        @*<a href="">@n.IeltsTest.Name</a>*@
+                        @Html.ActionLink(n.Name, "StudentDahsboard", new { id = n.Categoryid, sid = sess })
                     </li>
                 }
             </ul>

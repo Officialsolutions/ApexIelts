@@ -5,6 +5,7 @@
     dbcontext db = new dbcontext();
     var pagdata = db.Pages.Where(x => x.Pagesid == 7).FirstOrDefault();
     var testi = db.Testimonials.ToList();
+    var album = db.Albums.ToList();
 }
 
 @section Keyword {
@@ -38,108 +39,29 @@
     <div class="col-md-9">
         <div class="wprt-portfolio-grid" data-column="3" data-column2="3" data-column3="2" data-column4="1" data-gaph="30" data-gapv="30">
             <div id="projects" class="cbp">
+            @if (album != null)
+            {
+                foreach (var aa in album)
+                {
                 <div class="cbp-item strategy equity">
                     <div class="project-item">
                         <div class="inner">
                             <div class="effect-default">
                                 <div class="project-image">
-                                    <img src="~/assets/img/projects/grid-1/project-1.jpg" alt="image">
+                                    <img src="~/UploadedFiles/@aa.Image" alt="image">
                                 </div>
                                 <div class="text">
                                     <div>
-                                        <h2><a href="#" title="">Financial Consulting</a></h2>
-                                        <a href="#" title="">Businiess</a>
+                                        <h3>@Html.ActionLink(aa.AlbumName, "Gallery", new { id = aa.Albumid })</h3>
+                                        @*<a href="#" title="">Businiess</a>*@
                                     </div>
                                 </div>
                             </div><!-- /.effect-default -->
                         </div>
                     </div><!-- /.project-item -->
                 </div><!-- /.cbp-item -->
-                <div class="cbp-item resources analytics">
-                    <div class="project-item">
-                        <div class="inner">
-                            <div class="effect-default">
-                                <div class="project-image">
-                                    <img src="~/assets/img/projects/grid-1/project-2.jpg" alt="image">
-                                </div>
-                                <div class="text">
-                                    <div>
-                                        <h2><a href="#" title="">Financial Consulting</a></h2>
-                                        <a href="#" title="">Businiess</a>
-                                    </div>
-                                </div>
-                            </div><!-- /.effect-default -->
-                        </div>
-                    </div><!-- /.project-item -->
-                </div><!-- /.cbp-item -->
-                <div class="cbp-item finance equity">
-                    <div class="project-item">
-                        <div class="inner">
-                            <div class="effect-default">
-                                <div class="project-image">
-                                    <img src="~/assets/img/projects/grid-1/project-3.jpg" alt="image">
-                                </div>
-                                <div class="text">
-                                    <div>
-                                        <h2><a href="#" title="">Financial Consulting</a></h2>
-                                        <a href="#" title="">Businiess</a>
-                                    </div>
-                                </div>
-                            </div><!-- /.effect-default -->
-                        </div>
-                    </div><!-- /.project-item -->
-                </div><!-- /.cbp-item -->
-                <div class="cbp-item resources strategy finance">
-                    <div class="project-item">
-                        <div class="inner">
-                            <div class="effect-default">
-                                <div class="project-image">
-                                    <img src="~/assets/img/projects/grid-1/project-4.jpg" alt="image">
-                                </div>
-                                <div class="text">
-                                    <div>
-                                        <h2><a href="#" title="">Financial Consulting</a></h2>
-                                        <a href="#" title="">Businiess</a>
-                                    </div>
-                                </div>
-                            </div><!-- /.effect-default -->
-                        </div>
-                    </div><!-- /.project-item -->
-                </div><!-- /.cbp-item -->
-                <div class="cbp-item analytics finance">
-                    <div class="project-item">
-                        <div class="inner">
-                            <div class="effect-default">
-                                <div class="project-image">
-                                    <img src="~/assets/img/projects/grid-1/project-5.jpg" alt="image">
-                                </div>
-                                <div class="text">
-                                    <div>
-                                        <h2><a href="#" title="">Financial Consulting</a></h2>
-                                        <a href="#" title="">Businiess</a>
-                                    </div>
-                                </div>
-                            </div><!-- /.effect-default -->
-                        </div>
-                    </div><!-- /.project-item -->
-                </div><!-- /.cbp-item -->
-                <div class="cbp-item strategy equity">
-                    <div class="project-item">
-                        <div class="inner">
-                            <div class="effect-default">
-                                <div class="project-image">
-                                    <img src="~/assets/img/projects/grid-1/project-6.jpg" alt="image">
-                                </div>
-                                <div class="text">
-                                    <div>
-                                        <h2><a href="#" title="">Financial Consulting</a></h2>
-                                        <a href="#" title="">Businiess</a>
-                                    </div>
-                                </div>
-                            </div><!-- /.effect-default -->
-                        </div>
-                    </div><!-- /.project-item -->
-                </div><!-- /.cbp-item -->
+                }
+            }
             </div><!-- /#projects -->
         </div>
 
