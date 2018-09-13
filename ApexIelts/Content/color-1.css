@@ -83,8 +83,7 @@ body.header-style-3 #main-nav ul ul,
 .wprt-button.outline,
 .shop-content .shop_table.cart thead th.product-remove .item-remove:hover,
 .shop-content .shop_table.cart .product-remove .item-remove:hover,
-.wprt-button.light:hover {     color: #2236cc;
-    border-color: #6183fc; }
+.wprt-button.light:hover { color: #38cf69; border-color: #38cf69; }
 
 #sidebar .widget.widget_tag_cloud .tagcloud a:hover,
 #footer-widgets .widget.widget_tag_cloud .tagcloud a:hover,
@@ -196,15 +195,3 @@ body.header-style-3 #site-header .header-search-icon:hover,
 .custom-3.tparrows.tp-rightarrow:hover:before,
 .nav-top-cart-wrapper .nav-shop-cart ul li a:hover,
 .shop-content .wrap-content .product-meta-share ul li a:hover { color: #182331 }
-
-.wprt-counter span {
-    color: white !important;
-    font-weight: bold;
-    text-align: center !important;
-}
-.testi{    background-image: url('../UploadedFiles/testi.jpg');
-    background-size: contain;
-    background-color: #000000bf;
-    background-blend-mode: multiply;
-
-}

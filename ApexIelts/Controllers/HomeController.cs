@@ -6,11 +6,6 @@ using System.Web.Mvc;
 using AdminPaneNew.Areas.OfficialAdmin.Models;
 using System.Web.Mail;
 using System.Web.Security;
-using System.Net;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using Ionic.Zip;
-//using System.Web.Http;
 
 namespace ApexIelts.Controllers
 {
@@ -61,7 +56,7 @@ namespace ApexIelts.Controllers
             SingleService sser = db.SingleServices.Where(x => x.Singleid == id).FirstOrDefault();
             return View(sser);
         }
-
+      
         public ActionResult ShiningStars()
         {
             return View();
@@ -86,7 +81,7 @@ namespace ApexIelts.Controllers
             //return View();
         }
         // GET: Default/Details/5
-        public ActionResult StudentDahsboard(int id, int sid)
+        public ActionResult StudentDahsboard(int id,int sid)
         {
             var assign = db.AssignTests.Where(x => x.IeltsTest.Category.Categoryid == id).Where(a => a.Studentid == sid);
             return View(assign.ToList());
@@ -253,6 +248,12 @@ namespace ApexIelts.Controllers
             Session["student"] = null;
             return RedirectToAction("Home");
         }
-   
+        public ActionResult DownloadFile(string file)
+        {
+            string path = AppDomain.CurrentDomain.BaseDirectory + "/UploadedFiles/";
+            byte[] fileBytes = System.IO.File.ReadAllBytes(path + file);
+            string fileName = file;
+            return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
+        }
     }
 }

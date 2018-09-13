@@ -35,15 +35,16 @@ namespace ApexIelts
                       "~/Scripts/magnific.popup.min.js",
                       "~/Scripts/shortcodes.js",
                       "~/Scripts/main.js",
-                      
-                      "~/Scripts/responsiveslides.min.js"
+                      "~/Scripts/rev-slider.js",
+                      "~/Scripts/jquery.themepunch.tools.min.js",
+                      "~/Scripts/jquery.themepunch.revolution.min.js",
+                      "~/Scripts/revolution.extension.parallax.min.js"
                       ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                      "~/Content/bootstrap.css",
                       "~/Content/style.css",
-                      "~/Content/color-1.css",
-                      "~/Content/responsiveslides.css"));
+                      "~/Content/color-1.css"));
         }
     }
 }

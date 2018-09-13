@@ -950,7 +950,7 @@
 .wprt-testimonials .thumb { width: 70px; height: 70px; float: left; margin-right: 20px; }
 .wprt-testimonials .thumb img { -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%; }
 .wprt-testimonials .info { overflow: hidden; }
-.wprt-testimonials .text { position: relative; padding: 6px 95px  0 100px; font-family: 'Radley', serif; font-size: 20px; line-height: 30px; font-style: italic; border: none; margin: 73px 0 0 0;color:white }
+.wprt-testimonials .text { position: relative; padding: 6px 95px  0 100px; font-family: 'Radley', serif; font-size: 20px; line-height: 30px; font-style: italic; border: none; margin: 73px 0 0 0; }
 .wprt-testimonials .arrow-3 { position: absolute; top: 51px; left: 50%; line-height: 1px; font-family: 'Radley', serif; font-size: 120px; color: #38cf69; display: inline-block; -webkit-transform: translate(-50%,0); transform: translate(-50%,0); }
 .wprt-testimonials .info { margin-top: 36px; }
 .wprt-testimonials .name { font-size: 18px; color: #38cf69; margin: 0; display: inline-block; }
@@ -1324,12 +1324,6 @@
 
 /*Custom*/
 .project-slider .owl-theme .owl-nav [class*="owl-"] { opacity: 0; visibility: hidden; }
-span.arrow-3 {
-    color: white !important;
-}
-h6.name {
-    color: yellow !important;
-}
 
 @media only screen and (max-width: 991px) {
 	.project-slider .owl-theme .owl-nav [class*="owl-"] { opacity: 1; visibility: visible; }
@@ -1356,31 +1350,4 @@ h6.name {
 	.wprt-404-page .icon-wrap { font-size: 100px; }
 	.wprt-404-page .title { font-size: 30px; }
 	.wprt-404-page .button-wrap .wprt-button { margin-bottom: 20px; margin-right: 0; }
-}
-
-
-.sec-title {
-    margin-top: -8px;
-    margin-bottom: 50px;
-}
-.sec-title h2 {
-    position: relative;
-    font-size: 36px;
-    font-weight: 500;
-    color: #222;
-    text-transform: capitalize;
-}
-.sec-title h2:before {
-    position: absolute;
-    content: "";
-    left: 0px;
-    bottom: -15px;
-    width: 121px;
-    height: 4px;
-    background: url(http://wp.hostlin.com/nilachol/images/resource/tb2.png);
-}
-.sec-title.center h2:before {
-    left: 50%;
-    margin-left: -61px;
-    background: url(http://wp.hostlin.com/nilachol/images/resource/tb2.png);
 }
