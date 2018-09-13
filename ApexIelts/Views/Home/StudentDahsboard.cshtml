@@ -1,6 +1,5 @@
 ﻿@using AdminPaneNew.Areas.OfficialAdmin.Models
 @model IEnumerable<AdminPaneNew.Areas.OfficialAdmin.Models.AssignTest>
-@*@model List<AssignTest>*@
 @{
     ViewBag.Title = "StudentDahsboard";
     Layout = "~/Views/Shared/Layout.cshtml";
@@ -48,59 +47,36 @@
                 <div class="desc">
                     <p class="margin-bottom-13">@Model.IeltsTest.Url</p>
             </div>*@
-        @using (Html.BeginForm("DownloadZipFile", "", "ZipAPI", FormMethod.Post))
-        {
-            <div class="table-responsive">
-                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                    <thead>
-                        <tr>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.IeltsTest.Name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.IeltsTest.TestType)
+                        </th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IeltsTest.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IeltsTest.TestType)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Download", "DownloadFile", new { file = item.IeltsTest.Image })
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
 
-                            <th>
-                                Test Name
-                            </th>
-                            <th>TestType</th>
-
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    @*@for (int i = 0; i < Model.Count(); i++)
-                        {
-                            <tr>
-
-                                <td>
-                                    @Model[i].IeltsTest.Name
-                                    @Html.HiddenFor(m => m[i].IeltsTest.TestType)
-
-
-                                </td>
-                                <td>
-                                    @Model[i].IeltsTest.TestType
-                                </td>
-                                <td>
-                                    @Html.ActionLink("Download", "api/ZipAPI/DownloadZipFile", new { id = @Model[i].Ieltsid })
-
-                                </td>
-                            </tr>
-                        }*@
-                    @foreach (var item in Model)
-                    {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.IeltsTest.Name)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.IeltsTest.TestType)
-                            </td>
-                            <td>
-                                @Html.ActionLink("Download", "ZipAPI", new { id = item.Ieltsid })
-
-                            </td>
-                        </tr>
-                    }
-                </table>
-
-            </div>
-        }
     </div>
     <div class="col-md-3">
         <nav class="wprt-navbar style-1">
@@ -110,12 +86,24 @@
                 {
                     <li class="nav-item">
                         @Html.ActionLink(n.Name, "StudentDahsboard", new { id = n.Categoryid, sid = sess })
-
+                        @*<a href="">@n.IeltsTest.Name</a>*@
                     </li>
                 }
             </ul>
         </nav>
+        @*<div class="wprt-spacer clearfix" data-desktop="35" data-mobi="20" data-smobi="20"></div>*@
 
+        @*<div class="wprt-spacer clearfix" data-desktop="47" data-mobi="30" data-smobi="20"></div>*@
+        @*<div class="wrap quick">
+                <div class="wprt-headings clearfix">
+                    <h2 class="heading font-size-24 margin-bottom-5">@pagdata.Name</h2>
+                    <div class="sub-heading font-size-14">@Html.Raw(pagdata.Description)</div>
+                </div>
+                <div class="wprt-spacer clearfix" data-desktop="20" data-mobi="10" data-smobi="10"></div>
+                <div class="wrap-button">
+                    <a class="wprt-button btn-small" href="@Url.Action("ContactUs")">Contact Us</a>
+                </div>
+            </div>*@
         <div class="wprt-spacer clearfix" data-desktop="0" data-mobi="40" data-smobi="30"></div>
     </div>
 </div>

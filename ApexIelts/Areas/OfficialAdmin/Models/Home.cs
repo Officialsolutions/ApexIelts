@@ -217,8 +217,6 @@ namespace AdminPaneNew.Areas.OfficialAdmin.Models
         public virtual Category Category { get; set; }
         public string TestType { get; set; }
         public string Image { get; set; }
-        public string Url { get; set; }
-        public string Audio { get; set; }
         public DateTime date { get; set; }
         public virtual ICollection<AssignTest> AssignTest { get; set; }
     }

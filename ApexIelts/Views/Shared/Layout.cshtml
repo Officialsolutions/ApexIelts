@@ -123,17 +123,10 @@
                                         <ul>
                                             @foreach (var a in ss)
                                             {
-<<<<<<< HEAD
                                                 <li>
                                                     @Html.ActionLink(a.Name, "Service", new { id = a.Serviceid })
                                                     <ul>
                                                         @foreach (var nn in sser.Where(x => x.Serviceid == a.Serviceid))
-=======
-                                            <li>
-                                                @Html.ActionLink(a.Name, "Service", new { id = a.Serviceid })
-                                                <ul style="position: absolute;top: 0px;">
-                                                    @foreach (var nn in sser.Where(x=>x.Serviceid==a.Serviceid))
->>>>>>> 4333cfb484a3c26fd4953d2903556a21d49de281
                                                         {
                                                             <li>
                                                                 @Html.ActionLink(nn.Name, "ServiceDetails", new { id = nn.Singleid })
@@ -291,16 +284,7 @@
     </div>
 
 
-<<<<<<< HEAD
     @Scripts.Render("~/bundles/bootstrap")
 
-=======
-@Scripts.Render("~/bundles/bootstrap")
-    <script>
-  $(function() {
-    $(".rslides").responsiveSlides();
-  });
-    </script>
->>>>>>> 4333cfb484a3c26fd4953d2903556a21d49de281
 </body>
 </html>

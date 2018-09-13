@@ -47,13 +47,13 @@ namespace AdminPaneNew.Areas.OfficialAdmin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Serviceid,Name,Description,ShortDescription,Image,date,Thumbnail,Keyword,MetaDescription")] Service service, HttpPostedFileBase file, HttpPostedFileBase file2, Helper Help)
+        public ActionResult Create([Bind(Include = "Serviceid,Name,Description,ShortDescription,Image,date,Thumbnail,Keyword,MetaDescription")] Service service, HttpPostedFileBase file, Helper Help)
         {
             if (ModelState.IsValid)
             {
                 service.date = System.DateTime.Now;
                 service.Image = Help.uploadfile(file);
-                service.Thumbnail = Help.uploadfile(file2);
+                service.Thumbnail = Help.uploadfile(file);
                 db.Services.Add(service); 
                 db.SaveChanges();
                 TempData["Success"] = "Saved Successfully";
@@ -86,7 +86,7 @@ namespace AdminPaneNew.Areas.OfficialAdmin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Serviceid,Name,Description,ShortDescription,Image,date,Thumbnail,Keyword,MetaDescription")] Service service, HttpPostedFileBase file, HttpPostedFileBase file2, Helper Help)
+        public ActionResult Edit([Bind(Include = "Serviceid,Name,Description,ShortDescription,Image,date,Thumbnail,Keyword,MetaDescription")] Service service, HttpPostedFileBase file, Helper Help)
         {
             if (ModelState.IsValid)
             {
@@ -105,7 +105,7 @@ namespace AdminPaneNew.Areas.OfficialAdmin.Controllers
                     }
                 }
                 #endregion
-                service.Thumbnail = file2 != null ? Help.uploadfile(file2) : thumb;
+                service.Thumbnail = file != null ? Help.uploadfile(file) : thumb;
                 #region delete file
                 string fullPath2 = Request.MapPath("~/UploadedFiles/" + thumb);
                 if (thumb == service.Thumbnail)
