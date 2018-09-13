@@ -307,4 +307,12 @@ namespace AdminPaneNew.Areas.OfficialAdmin.Models
         public string MetaDescription { get; set; }
 
     }
-}
+    public class Test
+    {
+        [Key]
+        public int id { get; set; }
+        [Required]
+        public string Name { get; set; }
+        public string zip { get; set; }
+    }
+    }

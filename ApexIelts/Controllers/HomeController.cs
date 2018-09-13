@@ -5,6 +5,12 @@ using System.Web;
 using System.Web.Mvc;
 using AdminPaneNew.Areas.OfficialAdmin.Models;
 using System.Web.Mail;
+using System.Web.Security;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using Ionic.Zip;
+//using System.Web.Http;
 
 namespace ApexIelts.Controllers
 {
@@ -55,7 +61,7 @@ namespace ApexIelts.Controllers
             SingleService sser = db.SingleServices.Where(x => x.Singleid == id).FirstOrDefault();
             return View(sser);
         }
-      
+
         public ActionResult ShiningStars()
         {
             return View();
@@ -64,9 +70,10 @@ namespace ApexIelts.Controllers
         {
             return View();
         }
-        public ActionResult Gallery()
+        public ActionResult Gallery(int id)
         {
-            return View();
+            var gallery = db.Galleries.Where(x => x.Albumid == id).ToList();
+            return View(gallery);
         }
         public ActionResult Video()
         {
@@ -79,10 +86,10 @@ namespace ApexIelts.Controllers
             //return View();
         }
         // GET: Default/Details/5
-        public ActionResult StudentDahsboard(int id)
+        public ActionResult StudentDahsboard(int id, int sid)
         {
-           AssignTest assign = db.AssignTests.Where(x => x.Assignid == id).FirstOrDefault();
-            return View(assign);
+            var assign = db.AssignTests.Where(x => x.IeltsTest.Category.Categoryid == id).Where(a => a.Studentid == sid);
+            return View(assign.ToList());
         }
         public ActionResult StudentProfile()
         {
@@ -239,5 +246,13 @@ namespace ApexIelts.Controllers
                 return View();
             }
         }
+
+        public ActionResult SignOut()
+        {
+            FormsAuthentication.SignOut();
+            Session["student"] = null;
+            return RedirectToAction("Home");
+        }
+   
     }
 }

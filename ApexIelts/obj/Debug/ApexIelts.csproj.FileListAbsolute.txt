@@ -314,4 +314,8 @@ G:\pawandeep\latest\ApexIelts\ApexIelts\bin\System.Web.Helpers.xml
 G:\pawandeep\latest\ApexIelts\ApexIelts\bin\System.Web.Mvc.xml
 G:\pawandeep\latest\ApexIelts\ApexIelts\obj\Debug\ApexIelts.dll
 G:\pawandeep\latest\ApexIelts\ApexIelts\obj\Debug\ApexIelts.pdb
-G:\pawandeep\latest\ApexIelts\ApexIelts\obj\Debug\ApexIelts.csprojResolveAssemblyReference.cache
+G:\pawandeep\latest\ApexIelts\ApexIelts\bin\Ionic.Zip.dll
+G:\pawandeep\latest\ApexIelts\ApexIelts\bin\System.Net.Http.Formatting.dll
+G:\pawandeep\latest\ApexIelts\ApexIelts\bin\System.Web.Http.dll
+G:\pawandeep\latest\ApexIelts\ApexIelts\bin\System.Net.Http.Formatting.xml
+G:\pawandeep\latest\ApexIelts\ApexIelts\bin\System.Web.Http.xml

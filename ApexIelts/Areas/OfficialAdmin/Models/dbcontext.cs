@@ -52,5 +52,7 @@ namespace AdminPaneNew.Areas.OfficialAdmin.Models
         public System.Data.Entity.DbSet<AdminPaneNew.Areas.OfficialAdmin.Models.Counter> Counters { get; set; }
 
         public System.Data.Entity.DbSet<AdminPaneNew.Areas.OfficialAdmin.Models.SingleService> SingleServices { get; set; }
+
+        public System.Data.Entity.DbSet<AdminPaneNew.Areas.OfficialAdmin.Models.Test> Tests { get; set; }
     }
 }

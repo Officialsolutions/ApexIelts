@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using AdminPaneNew.Areas.OfficialAdmin.Models;
 using onlineportal.Areas.AdminPanel.Models;
+using System.Collections;
 
 namespace AdminPaneNew.Areas.OfficialAdmin.Controllers
 {
@@ -16,15 +17,19 @@ namespace AdminPaneNew.Areas.OfficialAdmin.Controllers
      
         private dbcontext db = new dbcontext();
         public static string img;
-        public static string imags;
-       
+        public static string imags=null;
+
         int aid;
         // GET: OfficialAdmin/Albums
         public ActionResult Index()
         {
             return View(db.Albums.ToList());
         }
-
+        public ActionResult Gallery(int id)
+        {
+            var gallery = db.Galleries.Where(x => x.Albumid == id).ToList();
+            return View(gallery);
+        }
         // GET: OfficialAdmin/Albums/Details/5
         public ActionResult Details(int? id)
         {
@@ -88,13 +93,29 @@ namespace AdminPaneNew.Areas.OfficialAdmin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DataTable dt = new DataTable();
-            dt.Columns.Add("id", System.Type.GetType("System.Int32"));
-            dt.Columns.Add("Image");
+            //DataTable dt = new DataTable();
+            //dt.Columns.Add("id", System.Type.GetType("System.Int32"));
+            //dt.Columns.Add("Image");
             Album album = db.Albums.Find(id);
             aid = album.Albumid;
             img = album.Image;
-            imags = db.Galleries.FirstOrDefault(x => x.Albumid == album.Albumid).Images;
+            var gal = db.Galleries.Where(x => x.Albumid == album.Albumid).ToList();
+            imags = null;
+            if (gal != null)
+            {
+                foreach (var n in gal)
+                {
+                    if (imags == null)
+                    {
+                        imags = n.Images;
+                    }
+                    else
+                    {
+                        imags +=","+ n.Images;
+                    }
+                }
+            }
+            //imags = db.Galleries.FirstOrDefault(x => x.Albumid == album.Albumid).Images;
             //MyDt = db.Galleries.Where(x => x.Albumid == id).ToListAsync();
             //if (gallery != null)
             //{
@@ -139,24 +160,47 @@ namespace AdminPaneNew.Areas.OfficialAdmin.Controllers
                 db.SaveChanges();
 
                 ////////////////////////////////
-
+                string[] gfil = imags.Split(',');
                 gallery.date = System.DateTime.Now;
-                gallery.Albumid = aid;
-                Session["val"] = db.Galleries.Where(x => x.Albumid == album.Albumid).ToList();
-                string ss = Session["val"].ToString();
-                
-                if (file2 != null)
+                gallery.Albumid = album.Albumid;
+                foreach (var files in file2)
                 {
-                    foreach (var a in file2)
+                    if(files==null)
                     {
-                        //gallery.Images = Help.uploadfile(a);
-                        gallery.Images = file2 != null ? Help.uploadfile(a) : imags;
-                        db.Galleries.Add(gallery);
+                       
+                    }
+                    else
+                    {
 
-                        db.SaveChanges();
+                            //gallery.Images = Help.uploadfile(a);
+                            gallery.Images = Help.uploadfile(files);
+                            db.Galleries.Add(gallery);
 
+                            db.SaveChanges();
+                        
+
+                        #region delete file
+                        foreach (var galfile in gfil)
+                        {
+                            string fullPath2 = Request.MapPath("~/UploadedFiles/" + galfile);
+                            if (img == gallery.Images)
+                            {
+                            }
+                            else
+                            {
+                                if (System.IO.File.Exists(fullPath))
+                                {
+                                    System.IO.File.Delete(fullPath);
+                                }
+                            }
+                        }
+                        #endregion
                     }
                 }
+                    
+                //if (gallery.Images = file2 != null ? Help.uploadfile(file2) : img)
+              
+                
                 TempData["Success"] = "Updated Successfully";
                 return RedirectToAction("Index");
             }
@@ -186,6 +230,32 @@ namespace AdminPaneNew.Areas.OfficialAdmin.Controllers
         {
             Album album = db.Albums.Find(id);
             db.Albums.Remove(album);
+            db.SaveChanges();
+            TempData["Success"] = "Deleted Successfully";
+            return RedirectToAction("Index");
+        }
+        [Authorize(Roles = "Admin")]
+        public ActionResult Remove(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Gallery gallery = db.Galleries.Find(id);
+            if (gallery == null)
+            {
+                return HttpNotFound();
+            }
+            return View(gallery);
+        }
+
+        // POST: OfficialAdmin/Albums/Delete/5
+        [HttpPost, ActionName("Remove")]
+        [ValidateAntiForgeryToken]
+        public ActionResult RemoveConfirmed(int id)
+        {
+            Gallery gallery = db.Galleries.Find(id);
+            db.Galleries.Remove(gallery);
             db.SaveChanges();
             TempData["Success"] = "Deleted Successfully";
             return RedirectToAction("Index");

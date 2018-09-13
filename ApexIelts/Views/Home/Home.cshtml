@@ -21,8 +21,59 @@
 {
     foreach (var s in ss)
     {
+<<<<<<< HEAD
+            <!-- Slide -->
+            <li data-transition="random">
+                <!-- Main Image -->
+                <img src="~/UploadedFiles/@s.Image" alt="" data-bgposition="center center" data-no-retina class="img-responsive">
+                <!-- Layers -->
+                <div class="tp-caption tp-resizeme title-slide"
+                     data-x="['left','left','left','left']" data-hoffset="['0','30','30','30']"
+                     data-y="['middle','middle','middle','middle']" data-voffset="['-123','-123','-123','-123']"
+                     data-fontsize="['60','60','40',30]"
+                     data-lineheight="['60','60','40','30']"
+                     data-width="full"
+                     data-height="none"
+                     data-whitespace="normal"
+                     data-transform_idle="o:1;"
+                     data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                     data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                     data-mask_in="x:0px;y:[100%];"
+                     data-mask_out="x:inherit;y:inherit;"
+                     data-start="700"
+                     data-splitin="none"
+                     data-splitout="none"
+                     data-responsive_offset="on">
+                    @s.Name<br>
+                  
+                </div>
+                <div class="tp-caption tp-resizeme desc-slide"
+                     data-x="['left','left','left','left']" data-hoffset="['0','30','30','30']"
+                     data-y="['middle','middle','middle','middle']" data-voffset="['-22','-22','-22','-22']"
+                     data-fontsize="['18','18','18',18]"
+                     data-lineheight="['25','25','25','25']"
+                     data-width="['1170','991','550','420']"
+                     data-height="none"
+                     data-whitespace="normal"
+                     data-transform_idle="o:1;"
+                     data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                     data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                     data-mask_in="x:0px;y:[100%];"
+                     data-mask_out="x:inherit;y:inherit;"
+                     data-start="700"
+                     data-splitin="none"
+                     data-splitout="none"
+                     data-responsive_offset="on">
+                    <div style="width:50%;">
+                        @Html.Raw(s.Description)
+                    </div>
+                   
+                </div>
+            </li>
+=======
 
     <li><img src="~/UploadedFiles/@s.Image" alt=""></li>
+>>>>>>> 4333cfb484a3c26fd4953d2903556a21d49de281
     }
 }
  
@@ -227,8 +278,6 @@
                                 </blockquote>
                                 <div class="info">
                                     <h6 class="name">@tt.Name</h6>
-                                    @*<span class="sep">|</span>
-                                    <span class="position">CEO CVTSoft</span>*@
                                 </div>
                             </div><!-- /.wprt-testimonials -->
                             }
