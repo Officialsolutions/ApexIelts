@@ -950,7 +950,7 @@
 .wprt-testimonials .thumb { width: 70px; height: 70px; float: left; margin-right: 20px; }
 .wprt-testimonials .thumb img { -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%; }
 .wprt-testimonials .info { overflow: hidden; }
-.wprt-testimonials .text { position: relative; padding: 6px 95px  0 100px; font-family: 'Radley', serif; font-size: 20px; line-height: 30px; font-style: italic; border: none; margin: 73px 0 0 0; }
+.wprt-testimonials .text { position: relative; padding: 6px 95px  0 100px; font-family: 'Radley', serif; font-size: 20px; line-height: 30px; font-style: italic; border: none; margin: 73px 0 0 0;color:white }
 .wprt-testimonials .arrow-3 { position: absolute; top: 51px; left: 50%; line-height: 1px; font-family: 'Radley', serif; font-size: 120px; color: #38cf69; display: inline-block; -webkit-transform: translate(-50%,0); transform: translate(-50%,0); }
 .wprt-testimonials .info { margin-top: 36px; }
 .wprt-testimonials .name { font-size: 18px; color: #38cf69; margin: 0; display: inline-block; }
@@ -1324,6 +1324,12 @@
 
 /*Custom*/
 .project-slider .owl-theme .owl-nav [class*="owl-"] { opacity: 0; visibility: hidden; }
+span.arrow-3 {
+    color: white !important;
+}
+h6.name {
+    color: yellow !important;
+}
 
 @media only screen and (max-width: 991px) {
 	.project-slider .owl-theme .owl-nav [class*="owl-"] { opacity: 1; visibility: visible; }

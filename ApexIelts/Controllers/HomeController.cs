@@ -248,12 +248,5 @@ namespace ApexIelts.Controllers
             Session["student"] = null;
             return RedirectToAction("Home");
         }
-        public ActionResult DownloadFile(string file)
-        {
-            string path = AppDomain.CurrentDomain.BaseDirectory + "/UploadedFiles/";
-            byte[] fileBytes = System.IO.File.ReadAllBytes(path + file);
-            string fileName = file;
-            return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
-        }
     }
 }

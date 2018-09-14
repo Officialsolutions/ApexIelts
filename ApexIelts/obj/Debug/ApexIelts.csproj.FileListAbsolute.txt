@@ -145,6 +145,7 @@ G:\Github\ApexIelts\ApexIelts\bin\System.Web.Helpers.xml
 G:\Github\ApexIelts\ApexIelts\bin\System.Web.Mvc.xml
 G:\Github\ApexIelts\ApexIelts\obj\Debug\ApexIelts.dll
 G:\Github\ApexIelts\ApexIelts\obj\Debug\ApexIelts.pdb
+<<<<<<< HEAD
 F:\pawan\ApexIelts\ApexIelts\bin\ApplicationInsights.config
 F:\pawan\ApexIelts\ApexIelts\bin\roslyn\csc.exe
 F:\pawan\ApexIelts\ApexIelts\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -371,3 +372,7 @@ E:\ApexIelts\ApexIelts\bin\System.Web.Mvc.xml
 E:\ApexIelts\ApexIelts\obj\Debug\ApexIelts.dll
 E:\ApexIelts\ApexIelts\obj\Debug\ApexIelts.pdb
 C:\Github\Apex\ApexIelts\ApexIelts\obj\Debug\ApexIelts.csprojResolveAssemblyReference.cache
+=======
+C:\Users\Admin\Desktop\ApexIelts\obj\Debug\ApexIelts.dll
+C:\Users\Admin\Desktop\ApexIelts\obj\Debug\ApexIelts.pdb
+>>>>>>> 181f2b2abc241a338168064311cd5585d05ba0c6

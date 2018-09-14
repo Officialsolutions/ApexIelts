@@ -160,7 +160,7 @@ namespace AdminPaneNew.Areas.OfficialAdmin.Controllers
         public ActionResult Login(Account model, string returnUrl)
         {
             dbcontext db = new dbcontext();
-            var dataItem = db.Accounts.Where(x => x.Usename == model.Usename && x.Password == model.Password).FirstOrDefault();
+            var dataItem = db.Accounts.Where(x => x.Usename == model.Usename && x.Password == model.Password).First();
             if (dataItem != null)
             {
                 FormsAuthentication.SetAuthCookie(dataItem.Usename, false);
