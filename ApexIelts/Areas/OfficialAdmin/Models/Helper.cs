@@ -25,7 +25,7 @@ namespace onlineportal.Areas.AdminPanel.Models
         {
             try
             {
-                if (file != null)
+                if (file!=null)
                 {
                     _FileName = Path.GetFileName(file.FileName);
 
@@ -40,14 +40,14 @@ namespace onlineportal.Areas.AdminPanel.Models
                     return "False";
                 }
 
-
+               
             }
             catch (Exception e)
             {
                 return "False";
             }
         }
-
+       
 
         public string EncryptData(string Message)
         {
@@ -98,7 +98,7 @@ namespace onlineportal.Areas.AdminPanel.Models
         }
         public string GenerateRandomOTP(int iOTPLength, string[] saAllowedCharacters)
         {
-
+            
             string sOTP = String.Empty;
 
             string sTempChars = String.Empty;
@@ -120,12 +120,12 @@ namespace onlineportal.Areas.AdminPanel.Models
             return sOTP;
 
         }
-        public string SendSMS(string User, string sender, string to, string message, string pass)
+        public string SendSMS(string User, string sender, string to, string message,string pass)
         {
             string stringpost = "uname=" + User + "&pass=" + pass + "&send=" + sender + "&dest=" + to + "&msg=" + message;
             //Response.Write(stringpost)
             string functionReturnValue = "";
-            // functionReturnValue = "";
+           // functionReturnValue = "";
 
             HttpWebRequest objWebRequest = null;
             HttpWebResponse objWebResponse = null;
@@ -197,9 +197,9 @@ namespace onlineportal.Areas.AdminPanel.Models
         //    var setting = db.EmailSettings.ToList();
         //    if (setting != null)
         //    {
-
+                
         //           // SendSMS(setting[0].SmsUser, setting[0].password, mobile, Message, "Trans", setting[0].Api);
-
+                
         //        return ("Done");
         //    }
         //    return ("Done");
@@ -286,7 +286,7 @@ namespace onlineportal.Areas.AdminPanel.Models
             return bmPhoto;
         }
         #endregion
-        public string Resize(HttpPostedFileBase file, int height, int width)
+        public string Resize(HttpPostedFileBase file,int height,int width)
         {
             try
             {
@@ -296,10 +296,10 @@ namespace onlineportal.Areas.AdminPanel.Models
 
                     _FileName = Guid.NewGuid().ToString().Substring(0, 4) + _FileName;
                     string _path = (HttpContext.Current.Server.MapPath("/UploadedFiles/" + _FileName));
-
+                    
                     Stream Buffer2 = file.InputStream;
                     System.Drawing.Image Image2 = System.Drawing.Image.FromStream(Buffer2);
-                    Bitmap bmp2 = ResizeImage(Image2, height, width);
+                    Bitmap bmp2 = ResizeImage(Image2, height ,width);
                     bmp2.Save(_path, System.Drawing.Imaging.ImageFormat.Jpeg);
 
                     return _FileName;
