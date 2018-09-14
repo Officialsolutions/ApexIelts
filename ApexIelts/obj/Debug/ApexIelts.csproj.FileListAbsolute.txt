@@ -370,3 +370,4 @@ E:\ApexIelts\ApexIelts\bin\System.Web.Helpers.xml
 E:\ApexIelts\ApexIelts\bin\System.Web.Mvc.xml
 E:\ApexIelts\ApexIelts\obj\Debug\ApexIelts.dll
 E:\ApexIelts\ApexIelts\obj\Debug\ApexIelts.pdb
+C:\Github\Apex\ApexIelts\ApexIelts\obj\Debug\ApexIelts.csprojResolveAssemblyReference.cache
